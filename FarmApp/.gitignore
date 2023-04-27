@@ -1,4 +1,5 @@
 .env
 /node_modules
 .vscode
+.logs
 sshWinGit.txt

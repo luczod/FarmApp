@@ -11,5 +11,7 @@ router.get("/test", (req: Request, res: Response) => {
 });
 
 router.get("/test2", TaskController.ShowData);
+router.post("/TotalMes", TaskController.getTotalMes);
+router.post("/TotalAno", TaskController.getTotalAno);
 
 export default router;

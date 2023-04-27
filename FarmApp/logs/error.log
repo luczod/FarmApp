@@ -1,1 +1,5 @@
 2023-04-23 12:02:07:27 [31merror[39m:[31mconnection error[39m
+ 2023-04-26 22:46:27:4627 [31merror[39m : [31msyntax error at or near "Eventual"[39m 
+ 2023-04-26 23:10:29:1029  [31merror[39m : [31mcolumn "undefined" does not exist[39m 
+ 2023-04-26 23:14:49:1449  [31merror[39m : [31mcolumn "undefined" does not exist[39m 
+ 2023-04-26 23:15:39:1539  [31merror[39m : [31mcolumn "undefined" does not exist[39m 
