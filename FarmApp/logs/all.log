@@ -105,3 +105,38 @@
  2023-04-26 23:15:49:1549  [32minfo[39m : [32m1[39m 
  2023-04-26 23:15:49:1549  [34mhttp[39m : [34mPOST /api/TotalAno 200 18 - 78.216 ms [39m
 [34m[39m 
+ 27-04-2023 22:21:39:2139  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 27-04-2023 22:21:39:2139  [32minfo[39m : [32mconnected[39m 
+ 27/04/2023 22:22:10:2210  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 27/04/2023 22:22:10:2210  [32minfo[39m : [32mconnected[39m 
+ 27/04/2023 22:32:51:3251  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 27/04/2023 22:32:51:3251  [32minfo[39m : [32mconnected[39m 
+ 27/04/2023 22:33:30:3330  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 27/04/2023 22:33:30:3330  [32minfo[39m : [32mconnected[39m 
+ 27/04/2023 22:33:51:3351  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 27/04/2023 22:33:51:3351  [32minfo[39m : [32mconnected[39m 
+ 27/04/2023 22:34:22:3422  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 27/04/2023 22:34:22:3422  [32minfo[39m : [32mconnected[39m 
+ 27/04/2023 22:35:21:3521  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 27/04/2023 22:35:21:3521  [32minfo[39m : [32mconnected[39m 
+ 27/04/2023 22:35:33:3533  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 27/04/2023 22:35:33:3533  [32minfo[39m : [32mconnected[39m 
+ 27/04/2023 22:35:43:3543  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 27/04/2023 22:35:43:3543  [32minfo[39m : [32mconnected[39m 
+ 27/04/2023 22:36:06:366  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 27/04/2023 22:36:06:366  [32minfo[39m : [32mconnected[39m 
+ 27/04/2023 22:38:00:380  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 27/04/2023 22:38:00:380  [32minfo[39m : [32mconnected[39m 
+ 27/04/2023 22:38:21:3821  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 27/04/2023 22:38:21:3821  [32minfo[39m : [32mconnected[39m 
+ 27/04/2023 22:38:41:3841  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 27/04/2023 22:38:41:3841  [32minfo[39m : [32mconnected[39m 
+ 27/04/2023 22:38:50:3850  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 27/04/2023 22:38:51:3851  [32minfo[39m : [32mconnected[39m 
+ 27/04/2023 22:38:58:3858  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 27/04/2023 22:38:58:3858  [32minfo[39m : [32mconnected[39m 
+ 27/04/2023 22:39:42:3942  [34mhttp[39m : [34mGET /api/test 200 19 - 3.694 ms [39m
+[34m[39m 
+ 27/04/2023 22:52:19:5219  [32minfo[39m : [32m1[39m 
+ 27/04/2023 22:52:19:5219  [34mhttp[39m : [34mPOST /api/TotalData 200 17 - 104.805 ms [39m
+[34m[39m 
