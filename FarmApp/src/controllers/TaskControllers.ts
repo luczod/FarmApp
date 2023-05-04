@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import db from "../../config/db";
 //Logger
 import Logger from "../../config/logger";
+import { log } from "console";
 
 export default class TaskController {
   //getalldatas
@@ -20,11 +21,40 @@ export default class TaskController {
 
     return;
   }
+
+  // mostrar todos os gastos até o momento
+  static async ShowTotal(req: Request, res: Response) {
+    const sql: string = `select sum(valor) from te."LanNatureza" ln2 
+                        join te."Natureza" n 
+                          on ln2.natureza = n.id_natureza 
+                        join te."Datam" d 
+                          on ln2.id_data = d.id_data`;
+
+    db.query(sql, (err, result) => {
+      if (err) {
+        Logger.error(err.message);
+      } else {
+        let resultado = result.rows.length > 1 ? result.rows : result.rows[0];
+        Logger.info(result.rows.length);
+        res.status(200).json(resultado);
+      }
+    });
+  }
+
   //SumTotalbyMeseNatureza
   static async getTotalMes(req: Request, res: Response) {
-    const mes = req.body.mes;
-    const natureza = req.body.natureza;
-    const sql: string = `select sum from  te.fn_totMes('${natureza}','${mes}')`;
+    let mes = req.body.mes;
+    let natureza = req.body.natureza;
+
+    natureza = natureza.replace(/["\[\]]/g, "");
+    mes = mes.replace(/["\[\]]/g, "");
+
+    const sql: string = `select sum(valor) from te."LanNatureza" ln2 
+                        join te."Natureza" n 
+                          on ln2.natureza = n.id_natureza 
+                        join te."Datam" d 
+                          on ln2.id_data = d.id_data
+                        where n.nomenatureza in (${natureza}) and d.mes in (${mes})`;
     db.query(sql, (err, result) => {
       if (err) {
         Logger.error(err.message);
@@ -37,10 +67,18 @@ export default class TaskController {
   }
   //SumTotalbyAnoeNatureza
   static async getTotalAno(req: Request, res: Response) {
-    const ano = req.body.ano;
-    console.log(ano);
-    const natureza = req.body.natureza;
-    const sql: string = `select sum from  te.fn_totAno('${natureza}',${ano})`;
+    let ano = req.body.ano;
+    let natureza = req.body.natureza;
+
+    natureza = natureza.replace(/["\[\]]/g, "");
+    ano = ano.replace(/["\[\]]/g, "");
+
+    const sql: string = `select sum(valor) from te."LanNatureza" ln2 
+                        join te."Natureza" n 
+                          on ln2.natureza = n.id_natureza 
+                        join te."Datam" d 
+                          on ln2.id_data = d.id_data
+                        where n.nomenatureza in (${natureza}) and d.ano in (${ano})`;
     db.query(sql, (err, result) => {
       if (err) {
         Logger.error(err.message);
@@ -57,6 +95,29 @@ export default class TaskController {
     console.log(dataInt);
     const { natureza } = req.body;
     const sql: string = `select sum from  te.fn_totDataInteira('${natureza}',${dataInt})`;
+    db.query(sql, (err, result) => {
+      if (err) {
+        Logger.error(err.message);
+      } else {
+        let resultado = result.rows.length > 1 ? result.rows : result.rows[0];
+        Logger.info(result.rows.length);
+        res.status(200).json(resultado);
+      }
+    });
+  }
+  //multiplos valores de uma vez
+  static async getTotalMult(req: Request, res: Response) {
+    const { dataInt } = req.body; //'M.O Eventual','BST'
+    let { natureza } = req.body;
+    natureza = natureza.replace(/["\[\]]/g, "");
+    console.log(natureza);
+
+    const sql: string = `select sum(valor) from te."LanNatureza" ln2 
+                        join te."Natureza" n 
+                          on ln2.natureza = n.id_natureza 
+                        join te."Datam" d 
+                          on ln2.id_data = d.id_data
+                        where n.nomenatureza in (${natureza}) and d.id_data = ${dataInt}`;
     db.query(sql, (err, result) => {
       if (err) {
         Logger.error(err.message);
