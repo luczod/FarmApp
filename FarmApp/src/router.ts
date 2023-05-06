@@ -10,9 +10,11 @@ router.get("/test", (req: Request, res: Response) => {
 
 router.get("/test2", TaskController.ShowData);
 router.get("/Total", TaskController.ShowTotal);
-router.post("/TotalMes", TaskController.getTotalMes);
-router.post("/TotalAno", TaskController.getTotalAno);
-router.post("/TotalData", TaskController.getTotalDataInteira);
-router.post("/TotalMult", TaskController.getTotalMult);
+router.post("/budgetMes", TaskController.getbudgetMes);
+router.post("/budgetAno", TaskController.getbudgetAno);
+router.post("/budgetData", TaskController.getbudgetDataInteira);
+router.post("/ReceitaMes", TaskController.getReceitaMes);
+router.post("/ReceitaAno", TaskController.getReceitaAno);
+router.post("/ReceitaData", TaskController.getReceitaData);
 
 export default router;

@@ -42,7 +42,7 @@ export default class TaskController {
   }
 
   //SumTotalbyMeseNatureza
-  static async getTotalMes(req: Request, res: Response) {
+  static async getbudgetMes(req: Request, res: Response) {
     let mes = req.body.mes;
     let natureza = req.body.natureza;
 
@@ -66,7 +66,7 @@ export default class TaskController {
     });
   }
   //SumTotalbyAnoeNatureza
-  static async getTotalAno(req: Request, res: Response) {
+  static async getbudgetAno(req: Request, res: Response) {
     let ano = req.body.ano;
     let natureza = req.body.natureza;
 
@@ -89,12 +89,18 @@ export default class TaskController {
       }
     });
   }
-  //SumTotalbyAnoeMeseNatureza
-  static async getTotalDataInteira(req: Request, res: Response) {
+  //SumTotalbyAnoMesNatureza
+  static async getbudgetDataInteira(req: Request, res: Response) {
     const { dataInt } = req.body;
     console.log(dataInt);
     const { natureza } = req.body;
-    const sql: string = `select sum from  te.fn_totDataInteira('${natureza}',${dataInt})`;
+    const sql: string = `select sum(valor) from te."LanNatureza" ln2 
+                        join te."Natureza" n 
+                          on ln2.natureza = n.id_natureza 
+                        join te."Datam" d 
+                          on ln2.id_data = d.id_data
+                        where n.nomenatureza in (${natureza}) and d.ano in (${dataInt})`;
+
     db.query(sql, (err, result) => {
       if (err) {
         Logger.error(err.message);
@@ -105,19 +111,69 @@ export default class TaskController {
       }
     });
   }
-  //multiplos valores de uma vez
-  static async getTotalMult(req: Request, res: Response) {
-    const { dataInt } = req.body; //'M.O Eventual','BST'
-    let { natureza } = req.body;
-    natureza = natureza.replace(/["\[\]]/g, "");
-    console.log(natureza);
+  //
 
-    const sql: string = `select sum(valor) from te."LanNatureza" ln2 
-                        join te."Natureza" n 
-                          on ln2.natureza = n.id_natureza 
-                        join te."Datam" d 
-                          on ln2.id_data = d.id_data
-                        where n.nomenatureza in (${natureza}) and d.id_data = ${dataInt}`;
+  //SumTotalbyMeseReceita
+  static async getReceitaMes(req: Request, res: Response) {
+    let mes = req.body.mes;
+    let receita = req.body.receita;
+
+    receita = receita.replace(/["\[\]]/g, "");
+    mes = mes.replace(/["\[\]]/g, "");
+
+    const sql: string = `select sum(valor) from te."LanReceita" lr  
+                          join te."Receita" r   
+                            ON lr.receita  = r.id_receita 
+                          join te."Datam" d 
+                            ON lr.iddata = d.id_data
+                          where r.nomereceita in (${receita}) and d.mes in (${mes})`;
+    db.query(sql, (err, result) => {
+      if (err) {
+        Logger.error(err.message);
+      } else {
+        let resultado = result.rows.length > 1 ? result.rows : result.rows[0];
+        Logger.info(result.rows.length);
+        res.status(200).json(resultado);
+      }
+    });
+  }
+
+  static async getReceitaAno(req: Request, res: Response) {
+    let ano = req.body.ano;
+    let receita = req.body.receita;
+
+    receita = receita.replace(/["\[\]]/g, "");
+    ano = ano.replace(/["\[\]]/g, "");
+
+    const sql: string = `select sum(valor) from te."LanReceita" lr  
+                          join te."Receita" r   
+                            ON lr.receita  = r.id_receita 
+                          join te."Datam" d 
+                            ON lr.iddata = d.id_data
+                          where r.nomereceita in (${receita}) and d.ano in (${ano})`;
+    db.query(sql, (err, result) => {
+      if (err) {
+        Logger.error(err.message);
+      } else {
+        let resultado = result.rows.length > 1 ? result.rows : result.rows[0];
+        Logger.info(result.rows.length);
+        res.status(200).json(resultado);
+      }
+    });
+  }
+  static async getReceitaData(req: Request, res: Response) {
+    let dataInt = req.body.dataInt;
+    let receita = req.body.receita;
+
+    receita = receita.replace(/["\[\]]/g, "");
+    dataInt = dataInt.replace(/["\[\]]/g, "");
+
+    const sql: string = `select sum(valor) from te."LanReceita" lr  
+                          join te."Receita" r   
+                            ON lr.receita  = r.id_receita 
+                          join te."Datam" d 
+                            ON lr.iddata = d.id_data
+                          where r.nomereceita in (${receita}) and d.id_data in (${dataInt})`;
     db.query(sql, (err, result) => {
       if (err) {
         Logger.error(err.message);

@@ -32,7 +32,7 @@ const port = config.get<number>("port");
 app.listen(port, async () => {
   db.connect((err: any) => {
     if (err) {
-      Logger.error("connection error", err.message);
+      Logger.error("connection error: ", err.message);
     } else {
       Logger.info("connected");
     }

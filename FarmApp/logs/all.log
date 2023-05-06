@@ -245,3 +245,74 @@
 [34m[39m 
  03/05/2023 22:34:26:3426  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
  03/05/2023 22:34:26:3426  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 17:02:39:239  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 17:02:39:239  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 17:03:08:38  [32minfo[39m : [32m1[39m 
+ 06/05/2023 17:03:08:38  [34mhttp[39m : [34mPOST /api/TotalAno 200 18 - 92.040 ms [39m
+[34m[39m 
+ 06/05/2023 17:12:57:1257  [34mhttp[39m : [34mGET /api/test 200 19 - 1.476 ms [39m
+[34m[39m 
+ 06/05/2023 17:13:02:132  [32minfo[39m : [32m1[39m 
+ 06/05/2023 17:13:02:132  [34mhttp[39m : [34mGET /api/Total 200 21 - 66.804 ms [39m
+[34m[39m 
+ 06/05/2023 17:28:11:2811  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 17:28:11:2811  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 17:29:03:293  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 17:29:03:293  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 17:30:14:3014  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 17:30:14:3014  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 17:38:23:3823  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 17:38:23:3823  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 17:38:48:3848  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 17:38:49:3849  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 17:39:46:3946  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 17:39:46:3946  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 17:48:34:4834  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 17:48:34:4834  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 17:49:14:4914  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 17:49:14:4914  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 17:49:16:4916  [34mhttp[39m : [34mGET /api/test 200 19 - 3.701 ms [39m
+[34m[39m 
+ 06/05/2023 17:49:20:4920  [34mhttp[39m : [34mPOST /api/TotalMes 404 152 - 1.805 ms [39m
+[34m[39m 
+ 06/05/2023 17:49:42:4942  [32minfo[39m : [32m1[39m 
+ 06/05/2023 17:49:42:4942  [34mhttp[39m : [34mPOST /api/budgetMes 200 18 - 68.857 ms [39m
+[34m[39m 
+ 06/05/2023 17:50:17:5017  [32minfo[39m : [32m1[39m 
+ 06/05/2023 17:50:17:5017  [34mhttp[39m : [34mPOST /api/ReceitaMes 200 19 - 69.437 ms [39m
+[34m[39m 
+ 06/05/2023 17:53:09:539  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 17:53:09:539  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 17:53:23:5323  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 17:53:23:5323  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 17:57:10:5710  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 17:57:10:5710  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 17:59:07:597  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 17:59:07:597  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 18:03:05:35  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 18:03:05:35  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 18:03:34:334  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 18:03:34:334  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 18:03:37:337  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 18:03:37:337  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 18:04:21:421  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 18:04:21:421  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 18:04:25:425  [32minfo[39m : [32m1[39m 
+ 06/05/2023 18:04:25:425  [34mhttp[39m : [34mPOST /api/ReceitaMes 200 19 - 79.904 ms [39m
+[34m[39m 
+ 06/05/2023 18:05:05:55  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 18:05:05:55  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 18:05:08:58  [32minfo[39m : [32m1[39m 
+ 06/05/2023 18:05:08:58  [34mhttp[39m : [34mPOST /api/ReceitaAno 200 20 - 81.157 ms [39m
+[34m[39m 
+ 06/05/2023 18:06:12:612  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 18:06:12:612  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 18:06:16:616  [32minfo[39m : [32m1[39m 
+ 06/05/2023 18:06:16:616  [34mhttp[39m : [34mPOST /api/ReceitaData 200 16 - 66.854 ms [39m
+[34m[39m 
+ 06/05/2023 18:07:51:751  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 18:07:51:751  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 18:07:58:758  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 18:07:58:758  [32minfo[39m : [32mconnected[39m 
+ 06/05/2023 18:09:03:93  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 06/05/2023 18:09:03:93  [32minfo[39m : [32mconnected[39m 
