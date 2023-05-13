@@ -16,5 +16,6 @@ router.post("/budgetData", TaskController.getbudgetDataInteira);
 router.post("/ReceitaMes", TaskController.getReceitaMes);
 router.post("/ReceitaAno", TaskController.getReceitaAno);
 router.post("/ReceitaData", TaskController.getReceitaData);
+router.post("/ReceitaData", TaskController.budgetAdd);
 
 export default router;

@@ -3,8 +3,11 @@ import { Request, Response } from "express";
 import db from "../../config/db";
 //Logger
 import Logger from "../../config/logger";
-import { log } from "console";
-
+/**
+ Eu posso armazenar separado pegando apenas o target.value
+ ou criar uma tabela cheia de input
+ os inputs terão handlechange
+ */
 export default class TaskController {
   //getalldatas
   static async ShowData(req: Request, res: Response) {
@@ -162,6 +165,30 @@ export default class TaskController {
     });
   }
   static async getReceitaData(req: Request, res: Response) {
+    let dataInt = req.body.dataInt;
+    let receita = req.body.receita;
+
+    receita = receita.replace(/["\[\]]/g, "");
+    dataInt = dataInt.replace(/["\[\]]/g, "");
+
+    const sql: string = `select sum(valor) from te."LanReceita" lr  
+                          join te."Receita" r   
+                            ON lr.receita  = r.id_receita 
+                          join te."Datam" d 
+                            ON lr.iddata = d.id_data
+                          where r.nomereceita in (${receita}) and d.id_data in (${dataInt})`;
+    db.query(sql, (err, result) => {
+      if (err) {
+        Logger.error(err.message);
+      } else {
+        let resultado = result.rows.length > 1 ? result.rows : result.rows[0];
+        Logger.info(result.rows.length);
+        res.status(200).json(resultado);
+      }
+    });
+  }
+  //
+  static async budgetAdd(req: Request, res: Response) {
     let dataInt = req.body.dataInt;
     let receita = req.body.receita;
 
