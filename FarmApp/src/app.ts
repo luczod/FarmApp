@@ -2,12 +2,20 @@
 require("dotenv").config();
 import express from "express";
 import config from "config";
+const cors = require("cors");
+const corsOptions = {
+  origin: "*",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
 
 const app = express();
 
 //json midleware
 app.use(express.json());
 
+//cors
+app.use(cors(corsOptions));
 //DB
 import db from "../config/db";
 

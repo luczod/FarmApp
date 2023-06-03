@@ -5,19 +5,16 @@ import SelectInput from "../../components/SelectInput";
 import FinancesItem from "../../components/FinancesItem";
 import { useParams } from "react-router-dom";
 import { v4 } from "uuid";
+import axios from "axios";
 
-import gains from "../../repositories/gains";
-import expenses from "../../repositories/expenses";
 import formatCurrency from "../../utils/formatCurrency";
-import formatDate from "../../utils/formatDate";
 import listOfMonths from "../../utils/months";
+import listOfYears from "../../utils/years";
 
 interface IData {
   id: string;
   description: string;
   amountFormatted: string;
-  frequency: string;
-  dateFormatted: string;
   tagColor: string;
 }
 
@@ -25,8 +22,9 @@ interface IData {
 const List: React.FC = () => {
   const { tipo } = useParams();
   const [data, setData] = useState<IData[]>([]);
-  const [monthSelected, setMonthSelected] = useState<number>(
-    new Date().getMonth() + 1
+  const [monthSelected, setMonthSelected] = useState<string>(
+    // new Date().getMonth() + 1
+    new Date().toLocaleString("default", { month: "long" })
   );
   const [yearSelected, setYearSelected] = useState<number>(
     new Date().getFullYear()
@@ -36,70 +34,55 @@ const List: React.FC = () => {
     "eventual",
   ]);
 
+  async function getReceitas(mes: string, ano: number) {
+    const data1 = axios.post("http://localhost:5000/api/manyReceita", {
+      mes: `"['${mes}']"`,
+      ano,
+    });
+    return data1;
+  }
+
+  async function getDespesas(mes: string, ano: number) {
+    const data1 = axios.post("http://localhost:5000/api/manyDespesa", {
+      mes: `"['${mes}']"`,
+      ano,
+    });
+    return data1;
+  }
+
   const pageData = useMemo(() => {
     return tipo === "entry-balance"
       ? {
           title: "Receitas",
           lineColor: "#6AD547",
-          data: gains,
         }
       : {
           title: "Despesas",
           lineColor: "#ED370F",
-          data: expenses,
         };
   }, [tipo]);
 
   const years = useMemo(() => {
-    let uniqueYears: number[] = [];
-
-    const { data } = pageData;
-
-    data.forEach((item) => {
-      const date = new Date(item.date);
-      const year = date.getFullYear();
-
-      if (!uniqueYears.includes(year)) {
-        uniqueYears.push(year);
-      }
-    });
-
-    return uniqueYears.map((year) => {
+    return listOfYears.map((years) => {
       return {
-        value: year,
-        label: year,
+        value: years,
+        label: years,
       };
     });
-  }, [pageData]);
+  }, []);
   //
   const months = useMemo(() => {
-    return listOfMonths.map((month, index) => {
+    return listOfMonths.map((month) => {
       return {
-        value: index + 1,
+        value: month,
         label: month,
       };
     });
   }, []);
 
-  const handleFrequencyClick = (frequency: string) => {
-    const alreadySelected = frequencyFilterSelected.findIndex(
-      (item) => item === frequency
-    );
-
-    if (alreadySelected >= 0) {
-      const filtered = frequencyFilterSelected.filter(
-        (item) => item !== frequency
-      );
-      setFrequencyFilterSelected(filtered);
-    } else {
-      setFrequencyFilterSelected((prev) => [...prev, frequency]);
-    }
-  };
-
   const handleMonthSelected = (month: string) => {
     try {
-      const parseMonth = Number(month);
-      setMonthSelected(parseMonth);
+      setMonthSelected(month);
     } catch {
       throw new Error("invalid month value. Is accept 0 - 24.");
     }
@@ -115,41 +98,59 @@ const List: React.FC = () => {
   };
 
   useEffect(() => {
-    const { data } = pageData;
-    console.log(data);
+    const { title } = pageData;
+    let gain!: [];
 
-    const filteredData = data.filter((item) => {
-      const date = new Date(item.date);
-      const month = date.getMonth() + 1;
-      const year = date.getFullYear();
+    interface IitensReceitas {
+      nomereceita: string;
+      valor: string;
+    }
 
-      return (
-        month === monthSelected &&
-        year === yearSelected &&
-        frequencyFilterSelected.includes(item.frequency)
-      );
-    });
+    interface IitensDespesas {
+      nomenatureza: string;
+      valor: string;
+    }
+
+    if (title === "Receitas") {
+      getReceitas(monthSelected, yearSelected).then((e) => {
+        if (e.data) {
+          gain = e.data;
+          const formattedData = gain.map((itens: Iitens) => {
+            return {
+              id: v4(),
+              description: itens.nomereceita,
+              amountFormatted: formatCurrency(Number(itens.valor)),
+              tagColor: "#6AD547",
+            };
+          });
+          setData(formattedData);
+        } else {
+          setData([]);
+        }
+      });
+    }
+
+    if (title === "Despesas") {
+      getDespesas(monthSelected, yearSelected).then((e) => {
+        if (e.data) {
+          gain = e.data;
+          const formattedData = gain.map((itens: IitensDespesas) => {
+            return {
+              id: v4(),
+              description: itens.nomenatureza,
+              amountFormatted: formatCurrency(Number(itens.valor)),
+              tagColor: "#ED370F",
+            };
+          });
+          setData(formattedData);
+        } else {
+          setData([]);
+        }
+      });
+    }
+
     //
-    console.log(filteredData);
-    const formattedData = filteredData.map((item) => {
-      return {
-        id: v4(),
-        description: item.description,
-        amountFormatted: formatCurrency(Number(item.amount)),
-        frequency: item.frequency,
-        dateFormatted: formatDate(item.date),
-        tagColor: item.frequency === "recorrente" ? "#4E41F0" : "#E44C4E",
-      };
-    });
-    setData(formattedData);
-    console.log(formattedData);
-  }, [
-    pageData,
-    monthSelected,
-    yearSelected,
-    data.length,
-    frequencyFilterSelected,
-  ]);
+  }, [pageData, monthSelected, yearSelected]);
 
   //console.log(data[0].dateFormatted);
   //
@@ -167,7 +168,7 @@ const List: React.FC = () => {
           defaultValue={yearSelected}
         />
       </ContentHeader>
-      <Filters>
+      {/* <Filters>
         <button
           type="button"
           className={`
@@ -195,14 +196,13 @@ const List: React.FC = () => {
         >
           Eventuais
         </button>
-      </Filters>
+      </Filters> */}
       <Content>
         {data.map((item) => (
           <FinancesItem
             key={item.id}
             tagColor={item.tagColor}
             title={item.description}
-            subtitle={item.dateFormatted}
             amount={item.amountFormatted}
           />
         ))}

@@ -345,3 +345,151 @@
  14/05/2023 10:36:46:3646  [32minfo[39m : [32m1[39m 
  14/05/2023 10:36:46:3646  [34mhttp[39m : [34mGET /api/Total 200 21 - 86.418 ms [39m
 [34m[39m 
+ 03/06/2023 12:52:06:526  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 12:52:07:527  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 12:52:48:5248  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 12:52:48:5248  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 12:53:44:5344  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 12:53:44:5344  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 12:54:52:5452  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 12:54:52:5452  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 13:01:27:127  [32minfo[39m : [32m1[39m 
+ 03/06/2023 13:01:27:127  [34mhttp[39m : [34mPOST /api/ReceitaData 200 16 - 153.782 ms [39m
+[34m[39m 
+ 03/06/2023 13:01:41:141  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 13:01:41:141  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 13:01:49:149  [31merror[39m : [31msyntax error at or near "["[39m 
+ 03/06/2023 13:02:13:213  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 13:02:13:213  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 13:02:21:221  [32minfo[39m : [32m4[39m 
+ 03/06/2023 13:02:21:221  [34mhttp[39m : [34mPOST /api/manyReceita 200 202 - 84.252 ms [39m
+[34m[39m 
+ 03/06/2023 13:03:56:356  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 13:03:56:356  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 13:04:28:428  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 13:04:28:428  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 13:33:54:3354  [31merror[39m : [31msyntax error at or near "["[39m 
+ 03/06/2023 13:34:01:341  [34mhttp[39m : [34mPOST /api//manyDespesa - - - - ms [39m
+[34m[39m 
+ 03/06/2023 13:34:14:3414  [32minfo[39m : [32m4[39m 
+ 03/06/2023 13:34:14:3414  [34mhttp[39m : [34mPOST /api//manyDespesa 200 202 - 66.725 ms [39m
+[34m[39m 
+ 03/06/2023 13:35:08:358  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 13:35:08:358  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 13:35:10:3510  [32minfo[39m : [32m17[39m 
+ 03/06/2023 13:35:10:3510  [34mhttp[39m : [34mPOST /api//manyDespesa 200 932 - 112.961 ms [39m
+[34m[39m 
+ 03/06/2023 13:37:20:3720  [31merror[39m : [31mcolumn "undefined" does not exist[39m 
+ 03/06/2023 13:37:39:3739  [34mhttp[39m : [34mGET /api/test 200 19 - 1.072 ms [39m
+[34m[39m 
+ 03/06/2023 13:37:54:3754  [34mhttp[39m : [34mGET /api/test 200 19 - 0.630 ms [39m
+[34m[39m 
+ 03/06/2023 13:37:54:3754  [34mhttp[39m : [34mGET /favicon.ico 404 150 - 1.886 ms [39m
+[34m[39m 
+ 03/06/2023 13:37:56:3756  [34mhttp[39m : [34mGET /api/test 304 - - 0.649 ms [39m
+[34m[39m 
+ 03/06/2023 13:38:00:380  [32minfo[39m : [32m1[39m 
+ 03/06/2023 13:38:00:380  [34mhttp[39m : [34mGET /api/Total 200 21 - 79.298 ms [39m
+[34m[39m 
+ 03/06/2023 13:38:12:3812  [32minfo[39m : [32m1[39m 
+ 03/06/2023 13:38:12:3812  [34mhttp[39m : [34mGET /api/Total 200 21 - 3.447 ms [39m
+[34m[39m 
+ 03/06/2023 13:38:12:3812  [34mhttp[39m : [34mGET /images/icons/gear.png 404 160 - 1.019 ms [39m
+[34m[39m 
+ 03/06/2023 14:19:08:198  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 14:19:08:198  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 14:19:11:1911  [32minfo[39m : [32m4[39m 
+ 03/06/2023 14:19:11:1911  [34mhttp[39m : [34mPOST /api/manyReceita 200 202 - 108.942 ms [39m
+[34m[39m 
+ 03/06/2023 16:23:58:2358  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 16:23:58:2358  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 17:14:11:1411  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 17:14:11:1411  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 17:15:15:1515  [31merror[39m : [31mcolumn "janeiro" does not exist[39m 
+ 03/06/2023 17:15:26:1526  [34mhttp[39m : [34mPOST /api//manyDespesa - - - - ms [39m
+[34m[39m 
+ 03/06/2023 17:16:14:1614  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 17:16:14:1614  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 17:16:21:1621  [31merror[39m : [31mcolumn "janeiro" does not exist[39m 
+ 03/06/2023 17:16:29:1629  [34mhttp[39m : [34mPOST /api//manyDespesa - - - - ms [39m
+[34m[39m 
+ 03/06/2023 17:16:37:1637  [31merror[39m : [31mcolumn "janeiro" does not exist[39m 
+ 03/06/2023 17:16:44:1644  [34mhttp[39m : [34mPOST /api//manyDespesa - - - - ms [39m
+[34m[39m 
+ 03/06/2023 17:17:10:1710  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 17:17:10:1710  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 17:17:13:1713  [31merror[39m : [31mcolumn "janeiro" does not exist[39m 
+ 03/06/2023 17:17:19:1719  [34mhttp[39m : [34mPOST /api//manyDespesa - - - - ms [39m
+[34m[39m 
+ 03/06/2023 17:17:57:1757  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 17:17:57:1757  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 17:17:59:1759  [31merror[39m : [31mcolumn "janeiro" does not exist[39m 
+ 03/06/2023 17:18:13:1813  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 17:18:13:1813  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 17:18:48:1848  [31merror[39m : [31mcolumn "undefined" does not exist[39m 
+ 03/06/2023 17:18:58:1858  [34mhttp[39m : [34mPOST /api/manyReceita - - - - ms [39m
+[34m[39m 
+ 03/06/2023 17:19:12:1912  [32minfo[39m : [32m34[39m 
+ 03/06/2023 17:19:12:1912  [34mhttp[39m : [34mPOST /api//manyDespesa 200 1853 - 83.517 ms [39m
+[34m[39m 
+ 03/06/2023 17:21:49:2149  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 17:21:49:2149  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 17:21:52:2152  [32minfo[39m : [32m34[39m 
+ 03/06/2023 17:21:52:2152  [34mhttp[39m : [34mPOST /api//manyDespesa 200 1853 - 77.375 ms [39m
+[34m[39m 
+ 03/06/2023 17:22:24:2224  [32minfo[39m : [32m17[39m 
+ 03/06/2023 17:22:24:2224  [34mhttp[39m : [34mPOST /api//manyDespesa 200 930 - 74.294 ms [39m
+[34m[39m 
+ 03/06/2023 17:23:09:239  [32minfo[39m : [32m17[39m 
+ 03/06/2023 17:23:09:239  [34mhttp[39m : [34mPOST /api//manyDespesa 200 931 - 67.408 ms [39m
+[34m[39m 
+ 03/06/2023 17:23:17:2317  [32minfo[39m : [32m34[39m 
+ 03/06/2023 17:23:17:2317  [34mhttp[39m : [34mPOST /api//manyDespesa 200 1853 - 4.424 ms [39m
+[34m[39m 
+ 03/06/2023 17:24:24:2424  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 17:24:24:2424  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 17:24:29:2429  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 17:24:29:2429  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 17:24:32:2432  [32minfo[39m : [32m34[39m 
+ 03/06/2023 17:24:32:2432  [34mhttp[39m : [34mPOST /api//manyDespesa 200 1853 - 138.876 ms [39m
+[34m[39m 
+ 03/06/2023 17:24:44:2444  [32minfo[39m : [32m34[39m 
+ 03/06/2023 17:24:44:2444  [34mhttp[39m : [34mPOST /api//manyDespesa 200 1845 - 7.114 ms [39m
+[34m[39m 
+ 03/06/2023 17:24:52:2452  [32minfo[39m : [32m17[39m 
+ 03/06/2023 17:24:52:2452  [34mhttp[39m : [34mPOST /api//manyDespesa 200 925 - 2.886 ms [39m
+[34m[39m 
+ 03/06/2023 17:28:18:2818  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 17:28:18:2818  [31merror[39m : [31mconnection error: [39m 
+ 03/06/2023 17:28:50:2850  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 17:28:50:2850  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 17:29:36:2936  [32minfo[39m : [32m17[39m 
+ 03/06/2023 17:29:36:2936  [34mhttp[39m : [34mPOST /api//manyDespesa 200 925 - 109.855 ms [39m
+[34m[39m 
+ 03/06/2023 17:29:44:2944  [32minfo[39m : [32m34[39m 
+ 03/06/2023 17:29:44:2944  [34mhttp[39m : [34mPOST /api//manyDespesa 200 1845 - 5.058 ms [39m
+[34m[39m 
+ 03/06/2023 17:32:26:3226  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 17:32:26:3226  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 17:32:34:3234  [32minfo[39m : [32m4[39m 
+ 03/06/2023 17:32:34:3234  [34mhttp[39m : [34mPOST /api/manyReceita 200 203 - 107.780 ms [39m
+[34m[39m 
+ 03/06/2023 17:32:51:3251  [32minfo[39m : [32m4[39m 
+ 03/06/2023 17:32:51:3251  [34mhttp[39m : [34mPOST /api/manyReceita 200 207 - 5.827 ms [39m
+[34m[39m 
+ 03/06/2023 18:38:03:383  [34mhttp[39m : [34mOPTIONS /api/manyReceita 200 4 - 2.436 ms [39m
+[34m[39m 
+ 03/06/2023 18:40:41:4041  [34mhttp[39m : [34mOPTIONS /api/manyReceita 200 4 - 0.634 ms [39m
+[34m[39m 
+ 03/06/2023 18:40:45:4045  [34mhttp[39m : [34mOPTIONS /api/manyReceita 200 4 - 0.567 ms [39m
+[34m[39m 
+ 03/06/2023 18:41:45:4145  [34mhttp[39m : [34mOPTIONS /api/manyReceita 200 4 - 0.522 ms [39m
+[34m[39m 
+ 03/06/2023 18:41:55:4155  [34mhttp[39m : [34mOPTIONS /api/manyReceita 200 4 - 0.472 ms [39m
+[34m[39m 
+ 03/06/2023 18:42:59:4259  [34mhttp[39m : [34mOPTIONS /api/manyReceita 200 4 - 0.405 ms [39m
+[34m[39m 
+ 03/06/2023 18:44:21:4421  [32minfo[39m : [32mrun in http://localhost:5000/[39m 
+ 03/06/2023 18:44:21:4421  [32minfo[39m : [32mconnected[39m 
+ 03/06/2023 18:44:28:4428  [34mhttp[39m : [34mOPTIONS /api/manyReceita 200 4 - 4.106 ms [39m
+[34m[39m 

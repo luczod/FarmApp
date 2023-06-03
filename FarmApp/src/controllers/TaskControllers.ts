@@ -115,7 +115,50 @@ export default class TaskController {
     });
   }
   //
+  static async manyReceitaDataInteira(req: Request, res: Response) {
+    let mes = req.body.mes;
+    const { ano } = req.body;
+    mes = mes.replace(/["\[\]]/g, "");
+    Logger.info(mes, ano);
+    const sql: string = `select nomereceita, valor from te."LanReceita" lr  
+                        join te."Receita" r   
+                          ON lr.receita  = r.id_receita 
+                        join te."Datam" d 
+                          ON lr.iddata = d.id_data
+                        where d.mes = ${mes} and d.ano = ${ano};`;
 
+    db.query(sql, (err, result) => {
+      if (err) {
+        Logger.error(err.message);
+      } else {
+        let resultado = result.rows.length > 1 ? result.rows : result.rows[0];
+        Logger.info(result.rows.length);
+        res.status(200).json(resultado);
+      }
+    });
+  }
+
+  static async manyDespesaDataInteira(req: Request, res: Response) {
+    let mes = req.body.mes;
+    const { ano } = req.body;
+    mes = mes.replace(/["\[\]]/g, "");
+    const sql: string = `select nomenatureza,valor from te."LanNatureza" ln2
+                        join te."Natureza" n   
+                          ON ln2.natureza  = n.id_natureza 
+                        join te."Datam" d 
+                          ON ln2.id_data  = d.id_data
+                        where d.mes = ${mes} and d.ano = ${ano};`;
+
+    db.query(sql, (err, result) => {
+      if (err) {
+        Logger.error(err.message);
+      } else {
+        let resultado = result.rows.length > 1 ? result.rows : result.rows[0];
+        Logger.info(result.rows.length);
+        res.status(200).json(resultado);
+      }
+    });
+  }
   //SumTotalbyMeseReceita
   static async getReceitaMes(req: Request, res: Response) {
     let mes = req.body.mes;
@@ -164,6 +207,7 @@ export default class TaskController {
       }
     });
   }
+
   static async getReceitaData(req: Request, res: Response) {
     let dataInt = req.body.dataInt;
     let receita = req.body.receita;
