@@ -114,6 +114,50 @@ export default class TaskController {
       }
     });
   }
+
+  static async getTotalNatureza(req: Request, res: Response) {
+    let mes = req.body.mes;
+    const { ano } = req.body;
+    mes = mes.replace(/["\[\]]/g, "");
+    const sql: string = `select sum(valor) from te."LanNatureza" ln2 
+                        join te."Natureza" n 
+                          on ln2.natureza = n.id_natureza 
+                        join te."Datam" d 
+                          on ln2.id_data = d.id_data
+                        where d.mes = ${mes} and d.ano = ${ano};`;
+
+    db.query(sql, (err, result) => {
+      if (err) {
+        Logger.error(err.message);
+      } else {
+        let resultado = result.rows.length > 1 ? result.rows : result.rows[0];
+        Logger.info(result.rows.length);
+        res.status(200).json(resultado);
+      }
+    });
+  }
+
+  static async getTotalReceita(req: Request, res: Response) {
+    let mes = req.body.mes;
+    const { ano } = req.body;
+    mes = mes.replace(/["\[\]]/g, "");
+    const sql: string = `select sum(valor) from te."LanReceita" lr 
+                        join te."Receita" r 
+                          on lr.receita  = r.id_receita 
+                        join te."Datam" d 
+                          on lr.iddata  = d.id_data
+                        where d.mes = ${mes} and d.ano = ${ano} and lr.receita = 4;`;
+
+    db.query(sql, (err, result) => {
+      if (err) {
+        Logger.error(err.message);
+      } else {
+        let resultado = result.rows.length > 1 ? result.rows : result.rows[0];
+        res.status(200).json(resultado);
+        Logger.info(result.rows.length);
+      }
+    });
+  }
   //
   static async manyReceitaDataInteira(req: Request, res: Response) {
     let mes = req.body.mes;

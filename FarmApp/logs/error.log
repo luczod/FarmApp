@@ -14,3 +14,7 @@
  03/06/2023 17:17:59:1759  [31merror[39m : [31mcolumn "janeiro" does not exist[39m 
  03/06/2023 17:18:48:1848  [31merror[39m : [31mcolumn "undefined" does not exist[39m 
  03/06/2023 17:28:18:2818  [31merror[39m : [31mconnection error: [39m 
+ 03/06/2023 18:47:31:4731  [31merror[39m : [31mcolumn "fevereiro" does not exist[39m 
+ 03/06/2023 18:52:16:5216  [31merror[39m : [31mcolumn "fevereiro" does not exist[39m 
+ 03/06/2023 18:52:30:5230  [31merror[39m : [31mcolumn "janeiro" does not exist[39m 
+ 03/06/2023 22:41:28:4128  [31merror[39m : [31moperator does not exist: integer == integer[39m 

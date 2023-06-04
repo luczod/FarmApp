@@ -3,6 +3,7 @@ import React, { useMemo } from "react";
 import dolarImg from "../../assets/dolar.svg";
 import arrowUpImg from "../../assets/arrow-up.svg";
 import arrowDownImg from "../../assets/arrow-down.svg";
+import formatCurrency from "../../utils/formatCurrency";
 
 import { Container } from "./styles";
 
@@ -37,10 +38,7 @@ const CardBox: React.FC<ICardBoxProps> = ({
   return (
     <Container color={color}>
       <span>{title}</span>
-      <h1>
-        <strong>R$ </strong>
-        {amount.toFixed(2)}
-      </h1>
+      <h1>{formatCurrency(amount)}</h1>
       <small>{footerlabel}</small>
       <img src={iconSelected} alt={title} />
     </Container>

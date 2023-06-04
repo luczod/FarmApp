@@ -1,60 +1,57 @@
 import React from "react";
-import { ResponsiveContainer, BarChart, Bar, Cell, Tooltip } from "recharts";
-
-import formatCurrency from "../../utils/formatCurrency";
-
 import {
-  Container,
-  SideLeft,
-  SideRight,
-  LegendContainer,
-  Legend,
-} from "./styles";
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+} from "recharts";
 
-interface IBarChartProps {
-  title: string;
+import { Container, ChartContainer, Header, LegendContainer } from "./styles";
+
+interface IBarChartBoProps {
   data: {
     name: string;
-    amount: number;
-    percent: number;
-    color: string;
+    valor: number;
   }[];
 }
 
-const BarChartBox: React.FC<IBarChartProps> = ({ title, data }) => (
+const BarChartBox: React.FC<IBarChartBoProps> = ({ data }) => (
   <Container>
-    <SideLeft>
-      <h2>{title}</h2>
+    <Header>
+      <h2>Despesas em porcentagem(%)</h2>
 
-      <LegendContainer>
-        {data.map((indicator) => (
-          <Legend key={indicator.name} color={indicator.color}>
-            <div>{indicator.percent}%</div>
-            <span>{indicator.name}</span>
-          </Legend>
-        ))}
-      </LegendContainer>
-    </SideLeft>
+      <LegendContainer></LegendContainer>
+    </Header>
 
-    <SideRight>
+    <ChartContainer>
       <ResponsiveContainer>
-        <BarChart data={data}>
-          <Bar dataKey="amount" name="Valor">
-            {data.map((indicator) => (
-              <Cell
-                key={indicator.name}
-                fill={indicator.color}
-                cursor="pointer"
-              />
-            ))}
-          </Bar>
-          <Tooltip
-            cursor={{ fill: "none" }}
-            formatter={(value) => formatCurrency(Number(value))}
+        <BarChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+          barSize={20}
+        >
+          <XAxis
+            dataKey="name"
+            scale="point"
+            padding={{ left: 10, right: 10 }}
           />
+          <YAxis type="number" domain={[0, 50]} />
+          <Tooltip />
+          <CartesianGrid strokeDasharray="3 3" />
+          <Bar dataKey="valor" fill="#d3d01a" background={{ fill: "#eee" }} />
         </BarChart>
       </ResponsiveContainer>
-    </SideRight>
+    </ChartContainer>
   </Container>
 );
 

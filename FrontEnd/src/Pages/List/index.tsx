@@ -8,6 +8,7 @@ import { v4 } from "uuid";
 import axios from "axios";
 
 import formatCurrency from "../../utils/formatCurrency";
+import formatNumber from "../../utils/formatNumber";
 import listOfMonths from "../../utils/months";
 import listOfYears from "../../utils/years";
 
@@ -18,37 +19,45 @@ interface IData {
   tagColor: string;
 }
 
+let gain!: [];
+
+interface IitensReceitas {
+  nomereceita: string;
+  valor: string;
+}
+
+interface IitensDespesas {
+  nomenatureza: string;
+  valor: string;
+}
+
+async function getReceitas(mes: string, ano: number) {
+  const data1 = axios.post("http://localhost:5000/api/manyReceita", {
+    mes: `"['${mes}']"`,
+    ano,
+  });
+  return data1;
+}
+
+async function getDespesas(mes: string, ano: number) {
+  const data1 = axios.post("http://localhost:5000/api/manyDespesa", {
+    mes: `"['${mes}']"`,
+    ano,
+  });
+  return data1;
+}
+
 // componente funcional "React.FC"
 const List: React.FC = () => {
+  const word = new Date().toLocaleString("default", { month: "long" });
+  const capitalized = word.charAt(0).toUpperCase() + word.slice(1);
+
   const { tipo } = useParams();
   const [data, setData] = useState<IData[]>([]);
-  const [monthSelected, setMonthSelected] = useState<string>(
-    // new Date().getMonth() + 1
-    new Date().toLocaleString("default", { month: "long" })
-  );
+  const [monthSelected, setMonthSelected] = useState<string>(capitalized);
   const [yearSelected, setYearSelected] = useState<number>(
     new Date().getFullYear()
   );
-  const [frequencyFilterSelected, setFrequencyFilterSelected] = useState([
-    "recorrente",
-    "eventual",
-  ]);
-
-  async function getReceitas(mes: string, ano: number) {
-    const data1 = axios.post("http://localhost:5000/api/manyReceita", {
-      mes: `"['${mes}']"`,
-      ano,
-    });
-    return data1;
-  }
-
-  async function getDespesas(mes: string, ano: number) {
-    const data1 = axios.post("http://localhost:5000/api/manyDespesa", {
-      mes: `"['${mes}']"`,
-      ano,
-    });
-    return data1;
-  }
 
   const pageData = useMemo(() => {
     return tipo === "entry-balance"
@@ -99,27 +108,22 @@ const List: React.FC = () => {
 
   useEffect(() => {
     const { title } = pageData;
-    let gain!: [];
-
-    interface IitensReceitas {
-      nomereceita: string;
-      valor: string;
-    }
-
-    interface IitensDespesas {
-      nomenatureza: string;
-      valor: string;
-    }
 
     if (title === "Receitas") {
       getReceitas(monthSelected, yearSelected).then((e) => {
         if (e.data) {
+          let valueFormat!: string;
           gain = e.data;
-          const formattedData = gain.map((itens: Iitens) => {
+          const formattedData = gain.map((itens: IitensReceitas) => {
+            if (itens.nomereceita === "Volume Leite") {
+              valueFormat = formatNumber(Number(itens.valor)) + " Litros";
+            } else {
+              valueFormat = formatCurrency(Number(itens.valor));
+            }
             return {
               id: v4(),
               description: itens.nomereceita,
-              amountFormatted: formatCurrency(Number(itens.valor)),
+              amountFormatted: valueFormat,
               tagColor: "#6AD547",
             };
           });
