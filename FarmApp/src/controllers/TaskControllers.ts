@@ -203,6 +203,29 @@ export default class TaskController {
       }
     });
   }
+
+  static async manyDespesaAno(req: Request, res: Response) {
+    const { ano } = req.body;
+    let natureza = req.body.natureza;
+
+    natureza = natureza.replace(/["\[\]]/g, "");
+    const sql: string = `select nomenatureza,valor, d.mes from te."LanNatureza" ln2
+                        join te."Natureza" n   
+                          ON ln2.natureza  = n.id_natureza 
+                        join te."Datam" d 
+                          ON ln2.id_data  = d.id_data
+                        where n.nomenatureza = ${natureza} and d.ano = ${ano};`;
+
+    db.query(sql, (err, result) => {
+      if (err) {
+        Logger.error(err.message);
+      } else {
+        let resultado = result.rows.length > 1 ? result.rows : result.rows[0];
+        Logger.info(result.rows.length);
+        res.status(200).json(resultado);
+      }
+    });
+  }
   //SumTotalbyMeseReceita
   static async getReceitaMes(req: Request, res: Response) {
     let mes = req.body.mes;

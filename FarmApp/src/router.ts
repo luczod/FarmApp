@@ -19,6 +19,7 @@ router.post("/ReceitaData", TaskController.getReceitaData);
 router.post("/ReceitaData", TaskController.budgetAdd);
 router.post("/manyReceita", TaskController.manyReceitaDataInteira);
 router.post("/manyDespesa", TaskController.manyDespesaDataInteira);
+router.post("/manyDespesaAno", TaskController.manyDespesaAno);
 router.post("/TotalDespesa", TaskController.getTotalNatureza);
 router.post("/TotalReceita", TaskController.getTotalReceita);
 

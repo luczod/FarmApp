@@ -7,7 +7,7 @@ import { MdAdd } from "react-icons/md";
 const MainHeader: React.FC = () => {
   return (
     <Container>
-      <MenuItemLink href="/">
+      <MenuItemLink href="/Adicionar">
         <MdAdd />
         Adicionar
       </MenuItemLink>
