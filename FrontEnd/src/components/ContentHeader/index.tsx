@@ -2,7 +2,7 @@ import React from "react";
 import { Container, TitleContainer, Controller } from "./styles";
 
 interface IContentHeaderProps {
-  title: string;
+  title?: string;
   lineColor: string;
   children: React.ReactNode;
 }

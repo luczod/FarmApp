@@ -209,12 +209,14 @@ export default class TaskController {
     let natureza = req.body.natureza;
 
     natureza = natureza.replace(/["\[\]]/g, "");
-    const sql: string = `select nomenatureza,valor, d.mes from te."LanNatureza" ln2
+    const sql: string = `select nomenatureza, ln2.valor, lr.valor as receitaTotal, d.mes from te."LanNatureza" ln2
                         join te."Natureza" n   
                           ON ln2.natureza  = n.id_natureza 
                         join te."Datam" d 
                           ON ln2.id_data  = d.id_data
-                        where n.nomenatureza = ${natureza} and d.ano = ${ano};`;
+                        join te."LanReceita" lr  
+                          ON lr.iddata = d.id_data 
+                        where n.nomenatureza = ${natureza} and d.ano = ${ano} and lr.receita = 4;`;
 
     db.query(sql, (err, result) => {
       if (err) {

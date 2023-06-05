@@ -13,15 +13,21 @@ import { Container, ChartContainer, Header, LegendContainer } from "./styles";
 
 interface IBarChartBoProps {
   data: {
-    name: string;
+    nameX: string;
     valor: number;
   }[];
+  titulo: string;
+  fillColor: string;
 }
 
-const BarChartBox: React.FC<IBarChartBoProps> = ({ data }) => (
+const BarChartBox: React.FC<IBarChartBoProps> = ({
+  data,
+  titulo,
+  fillColor,
+}) => (
   <Container>
     <Header>
-      <h2>Despesas em porcentagem(%)</h2>
+      <h2>{titulo}</h2>
 
       <LegendContainer></LegendContainer>
     </Header>
@@ -41,14 +47,14 @@ const BarChartBox: React.FC<IBarChartBoProps> = ({ data }) => (
           barSize={20}
         >
           <XAxis
-            dataKey="name"
+            dataKey="nameX"
             scale="point"
             padding={{ left: 10, right: 10 }}
           />
           <YAxis type="number" domain={[0, 50]} />
           <Tooltip />
           <CartesianGrid strokeDasharray="3 3" />
-          <Bar dataKey="valor" fill="#d3d01a" background={{ fill: "#eee" }} />
+          <Bar dataKey="valor" fill={fillColor} background={{ fill: "#eee" }} />
         </BarChart>
       </ResponsiveContainer>
     </ChartContainer>

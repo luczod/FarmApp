@@ -18,3 +18,8 @@
  03/06/2023 18:52:16:5216  [31merror[39m : [31mcolumn "fevereiro" does not exist[39m 
  03/06/2023 18:52:30:5230  [31merror[39m : [31mcolumn "janeiro" does not exist[39m 
  03/06/2023 22:41:28:4128  [31merror[39m : [31moperator does not exist: integer == integer[39m 
+ 04/06/2023 14:23:15:2315  [31merror[39m : [31mcolumn "['2019']" does not exist[39m 
+ 04/06/2023 14:24:30:2430  [31merror[39m : [31mcolumn "['2021']" does not exist[39m 
+ 04/06/2023 14:35:28:3528  [31merror[39m : [31mcolumn reference "valor" is ambiguous[39m 
+ 04/06/2023 14:35:29:3529  [31merror[39m : [31mcolumn reference "valor" is ambiguous[39m 
+ 04/06/2023 14:35:37:3537  [31merror[39m : [31mcolumn reference "valor" is ambiguous[39m 

@@ -10,7 +10,7 @@ import axios from "axios";
 
 import listOfMonths from "../../utils/months";
 import listOfYears from "../../utils/years";
-import formatCurrency from "../../utils/formatCurrency";
+import listNatureza from "../../utils/naturezas";
 import { Content } from "./styles";
 
 async function TotalReceita(mes: string, ano: number) {
@@ -37,14 +37,29 @@ async function manyDespesas(mes: string, ano: number) {
   return data1;
 }
 
+async function manyDespesasAno(ano: number, natureza: string) {
+  const data1 = axios.post("http://localhost:5000/api/manyDespesaAno", {
+    ano: `${ano}`,
+    natureza: `"['${natureza}']"`,
+  });
+  return data1;
+}
+
 interface IData {
-  name: string;
+  nameX: string;
   valor: number;
 }
 
 interface IitensDespesas {
   nomenatureza: string;
   valor: string;
+}
+
+interface IitensDespesasAno {
+  nomenatureza: string;
+  valor: string;
+  receitatotal: string;
+  mes: string;
 }
 
 // componente funcional "React.FC"
@@ -54,6 +69,7 @@ const Dashboard: React.FC = () => {
   const capitalized = word.charAt(0).toUpperCase() + word.slice(1);
 
   const [monthSelected, setMonthSelected] = useState<string>(capitalized);
+  const [naturezaSelected, setNaturezaSelected] = useState<string>("");
 
   const [yearSelected, setYearSelected] = useState<number>(
     new Date().getFullYear()
@@ -61,6 +77,7 @@ const Dashboard: React.FC = () => {
   const [gain, setGain] = useState<number>(0);
   const [exapense, setExpense] = useState<number>(0);
   const [data, setData] = useState<IData[]>([]);
+  const [dataAno, setDataAno] = useState<IData[]>([]);
 
   const years = useMemo(() => {
     return listOfYears.map((year) => {
@@ -78,6 +95,42 @@ const Dashboard: React.FC = () => {
         label: month,
       };
     });
+  }, []);
+
+  const naturezas = useMemo(() => {
+    return listNatureza.map((natureza, index) => {
+      return {
+        value: natureza,
+        label: natureza,
+      };
+    });
+  }, []);
+
+  const totalBalance = gain - exapense;
+
+  const handleMonthSelected = useCallback((month: string) => {
+    try {
+      setMonthSelected(month);
+    } catch {
+      throw new Error("invalid month value. Is accept 0 - 24.");
+    }
+  }, []);
+
+  const handleYearSelected = useCallback((year: string) => {
+    try {
+      const parseYear = Number(year);
+      setYearSelected(parseYear);
+    } catch {
+      throw new Error("invalid year value. Is accept integer numbers.");
+    }
+  }, []);
+
+  const handleNaturezaSelected = useCallback((natureza: string) => {
+    try {
+      setNaturezaSelected(natureza);
+    } catch {
+      throw new Error("invalid natureza.");
+    }
   }, []);
 
   useEffect(() => {
@@ -112,7 +165,7 @@ const Dashboard: React.FC = () => {
           formatValue = (Number(itens.valor) * 100) / gain;
           formatValue = Number(formatValue.toFixed(2));
           return {
-            name: itens.nomenatureza,
+            nameX: itens.nomenatureza,
             valor: formatValue,
           };
         });
@@ -123,24 +176,29 @@ const Dashboard: React.FC = () => {
     });
   }, [monthSelected, yearSelected]);
 
-  const totalBalance = gain - exapense;
-
-  const handleMonthSelected = useCallback((month: string) => {
-    try {
-      setMonthSelected(month);
-    } catch {
-      throw new Error("invalid month value. Is accept 0 - 24.");
-    }
-  }, []);
-
-  const handleYearSelected = useCallback((year: string) => {
-    try {
-      const parseYear = Number(year);
-      setYearSelected(parseYear);
-    } catch {
-      throw new Error("invalid year value. Is accept integer numbers.");
-    }
-  }, []);
+  useEffect(() => {
+    manyDespesasAno(yearSelected, naturezaSelected).then((e) => {
+      if (e.data) {
+        let gastoAno!: [];
+        let formatValue!: number;
+        gastoAno = e.data;
+        console.log(gastoAno);
+        gastoAno = e.data;
+        const formattedData = gastoAno.map((itens: IitensDespesasAno) => {
+          formatValue =
+            (Number(itens.valor) * 100) / Number(itens.receitatotal);
+          formatValue = Number(formatValue.toFixed(2));
+          return {
+            nameX: itens.mes.slice(0, 3),
+            valor: formatValue,
+          };
+        });
+        setDataAno(formattedData);
+      } else {
+        setDataAno([]);
+      }
+    });
+  }, [naturezaSelected, yearSelected]);
 
   return (
     <>
@@ -180,7 +238,24 @@ const Dashboard: React.FC = () => {
             icon="arrowDown"
           />
 
-          <BarChartBox data={data} />
+          <BarChartBox
+            data={data}
+            titulo={`${monthSelected} de ${yearSelected} - Despesas em porcentagem(%)`}
+            fillColor="#d3d01a"
+          />
+          <ConatentHeader lineColor="#D9D9D9">
+            <SelectInput
+              options={naturezas}
+              onChange={(e) => handleNaturezaSelected(e.target.value)}
+              defaultValue={naturezaSelected}
+            />
+          </ConatentHeader>
+
+          <BarChartBox
+            data={dataAno}
+            titulo={`Histórico de ${naturezaSelected} em ${yearSelected}`}
+            fillColor="#08A81E"
+          />
         </Content>
       </Container>
     </>
