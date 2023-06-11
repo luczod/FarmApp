@@ -22,5 +22,6 @@ router.post("/manyDespesa", TaskController.manyDespesaDataInteira);
 router.post("/manyDespesaAno", TaskController.manyDespesaAno);
 router.post("/TotalDespesa", TaskController.getTotalNatureza);
 router.post("/TotalReceita", TaskController.getTotalReceita);
+router.post("/AddValor", TaskController.AddValores);
 
 export default router;

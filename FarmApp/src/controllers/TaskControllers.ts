@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import db from "../../config/db";
 //Logger
 import Logger from "../../config/logger";
+
 /**
  Eu posso armazenar separado pegando apenas o target.value
  ou criar uma tabela cheia de input
@@ -223,8 +224,8 @@ export default class TaskController {
         Logger.error(err.message);
       } else {
         let resultado = result.rows.length > 1 ? result.rows : result.rows[0];
-        Logger.info(result.rows.length);
         res.status(200).json(resultado);
+        Logger.info(result.rows.length);
       }
     });
   }
@@ -323,5 +324,9 @@ export default class TaskController {
         res.status(200).json(resultado);
       }
     });
+  }
+  //
+  static async AddValores(req: Request, res: Response) {
+    console.log(req.body);
   }
 }

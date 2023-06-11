@@ -3,20 +3,19 @@ import React, { useMemo } from "react";
 import dolarImg from "../../assets/dolar.svg";
 import arrowUpImg from "../../assets/arrow-up.svg";
 import arrowDownImg from "../../assets/arrow-down.svg";
-import formatCurrency from "../../utils/formatCurrency";
 
 import { Container } from "./styles";
 
 interface ICardBoxProps {
-  title: string;
-  amount: number;
+  titulo: string;
+  amount: number | string;
   footerlabel: string;
   icon: "dolar" | "arrowUp" | "arrowDown";
   color: string;
 }
 
 const CardBox: React.FC<ICardBoxProps> = ({
-  title,
+  titulo,
   amount,
   footerlabel,
   icon,
@@ -37,10 +36,12 @@ const CardBox: React.FC<ICardBoxProps> = ({
 
   return (
     <Container color={color}>
-      <span>{title}</span>
-      <h1>{formatCurrency(amount)}</h1>
+      <span>{titulo}</span>
+
+      <h1>{amount}</h1>
+
       <small>{footerlabel}</small>
-      <img src={iconSelected} alt={title} />
+      <img src={iconSelected} alt={titulo} />
     </Container>
   );
 };

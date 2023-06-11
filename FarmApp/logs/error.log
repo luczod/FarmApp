@@ -23,3 +23,16 @@
  04/06/2023 14:35:28:3528  [31merror[39m : [31mcolumn reference "valor" is ambiguous[39m 
  04/06/2023 14:35:29:3529  [31merror[39m : [31mcolumn reference "valor" is ambiguous[39m 
  04/06/2023 14:35:37:3537  [31merror[39m : [31mcolumn reference "valor" is ambiguous[39m 
+ 04/06/2023 23:56:24:5624  [31merror[39m : [31mconnection error: [39m 
+ 05/06/2023 00:00:07:07  [31merror[39m : [31mconnection error: [39m 
+ 05/06/2023 00:00:14:014  [31merror[39m : [31mCannot use a pool after calling end on the pool[39m 
+ 05/06/2023 00:05:27:527  [31merror[39m : [31mconnection error: [39m 
+ 08/06/2023 11:40:14:4014  [31merror[39m : [31mcolumn "undefined" does not exist[39m 
+ 08/06/2023 11:40:14:4014  [31merror[39m : [31mcolumn "undefined" does not exist[39m 
+ 08/06/2023 11:40:14:4014  [31merror[39m : [31mcolumn "undefined" does not exist[39m 
+ 08/06/2023 11:40:14:4014  [31merror[39m : [31mcolumn "undefined" does not exist[39m 
+ 08/06/2023 11:40:14:4014  [31merror[39m : [31mcolumn "undefined" does not exist[39m 
+ 08/06/2023 11:40:14:4014  [31merror[39m : [31mcolumn "undefined" does not exist[39m 
+ 08/06/2023 11:40:39:4039  [31merror[39m : [31mcolumn "undefined" does not exist[39m 
+ 08/06/2023 11:41:27:4127  [31merror[39m : [31mcolumn "undefined" does not exist[39m 
+ 08/06/2023 11:41:27:4127  [31merror[39m : [31mcolumn "undefined" does not exist[39m 

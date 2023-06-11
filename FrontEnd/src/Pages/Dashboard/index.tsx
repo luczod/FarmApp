@@ -11,6 +11,7 @@ import axios from "axios";
 import listOfMonths from "../../utils/months";
 import listOfYears from "../../utils/years";
 import listNatureza from "../../utils/naturezas";
+import formatCurrency from "../../utils/formatCurrency";
 import { Content } from "./styles";
 
 async function TotalReceita(mes: string, ano: number) {
@@ -62,6 +63,10 @@ interface IitensDespesasAno {
   mes: string;
 }
 
+let totalBalance: number | string;
+
+let formatValue2: number;
+
 // componente funcional "React.FC"
 // call ConatentHeader com children   SelectInput
 const Dashboard: React.FC = () => {
@@ -69,11 +74,11 @@ const Dashboard: React.FC = () => {
   const capitalized = word.charAt(0).toUpperCase() + word.slice(1);
 
   const [monthSelected, setMonthSelected] = useState<string>(capitalized);
-  const [naturezaSelected, setNaturezaSelected] = useState<string>("");
+  const [naturezaSelected, setNaturezaSelected] =
+    useState<string>("M.O Efetiva");
 
-  const [yearSelected, setYearSelected] = useState<number>(
-    new Date().getFullYear()
-  );
+  const [yearSelected, setYearSelected] = useState<number>(2022);
+  // new Date().getFullYear()
   const [gain, setGain] = useState<number>(0);
   const [exapense, setExpense] = useState<number>(0);
   const [data, setData] = useState<IData[]>([]);
@@ -106,7 +111,13 @@ const Dashboard: React.FC = () => {
     });
   }, []);
 
-  const totalBalance = gain - exapense;
+  totalBalance = (exapense * 100) / gain;
+  totalBalance = totalBalance.toFixed(2);
+  if (totalBalance === "NaN") {
+    totalBalance = "0%";
+  } else {
+    totalBalance = totalBalance + "%";
+  }
 
   const handleMonthSelected = useCallback((month: string) => {
     try {
@@ -156,12 +167,12 @@ const Dashboard: React.FC = () => {
 
     manyDespesas(monthSelected, yearSelected).then((e) => {
       if (e.data) {
-        let gasto!: [];
-        let formatValue!: number;
-        gasto = e.data;
-        console.log(gasto);
-        gasto = e.data;
-        const formattedData = gasto.map((itens: IitensDespesas) => {
+        let formatValue: number;
+        let gastos: [];
+        gastos = e.data;
+        console.log(gastos);
+
+        const formattedData = gastos.map((itens: IitensDespesas) => {
           formatValue = (Number(itens.valor) * 100) / gain;
           formatValue = Number(formatValue.toFixed(2));
           return {
@@ -179,18 +190,16 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     manyDespesasAno(yearSelected, naturezaSelected).then((e) => {
       if (e.data) {
-        let gastoAno!: [];
-        let formatValue!: number;
+        let gastoAno: [];
         gastoAno = e.data;
         console.log(gastoAno);
-        gastoAno = e.data;
         const formattedData = gastoAno.map((itens: IitensDespesasAno) => {
-          formatValue =
+          formatValue2 =
             (Number(itens.valor) * 100) / Number(itens.receitatotal);
-          formatValue = Number(formatValue.toFixed(2));
+          formatValue2 = Number(formatValue2.toFixed(2));
           return {
             nameX: itens.mes.slice(0, 3),
-            valor: formatValue,
+            valor: formatValue2,
           };
         });
         setDataAno(formattedData);
@@ -198,7 +207,8 @@ const Dashboard: React.FC = () => {
         setDataAno([]);
       }
     });
-  }, [naturezaSelected, yearSelected]);
+    console.log(yearSelected, naturezaSelected);
+  }, [yearSelected, naturezaSelected]);
 
   return (
     <>
@@ -217,23 +227,23 @@ const Dashboard: React.FC = () => {
         </ConatentHeader>
         <Content>
           <CardBox
-            title="Saldo"
+            titulo="Orçamento"
             color="#FFFFFF"
             amount={totalBalance}
             footerlabel="atualizado com base nas entradas e saídas"
             icon="dolar"
           />
           <CardBox
-            title="Receitas"
+            titulo="Receitas"
             color="#FFFFFF"
-            amount={gain}
+            amount={formatCurrency(gain)}
             footerlabel="atualizado com base nas entradas e saídas"
             icon="arrowUp"
           />
           <CardBox
-            title="Despesas"
+            titulo="Despesas"
             color="#FFFFFF"
-            amount={exapense}
+            amount={formatCurrency(exapense)}
             footerlabel="atualizado com base nas entradas e saídas"
             icon="arrowDown"
           />
@@ -253,7 +263,7 @@ const Dashboard: React.FC = () => {
 
           <BarChartBox
             data={dataAno}
-            titulo={`Histórico de ${naturezaSelected} em ${yearSelected}`}
+            titulo={`${yearSelected} - Histórico de ${naturezaSelected}(%) `}
             fillColor="#08A81E"
           />
         </Content>

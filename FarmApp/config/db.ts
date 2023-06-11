@@ -16,4 +16,9 @@ const pool = new Pool({
   connectionTimeoutMillis: 2000,
 });
 
+async function clearCache() {
+  await pool.end(); // close all connections in the pool
+}
+// clearCache();
+
 export default pool;

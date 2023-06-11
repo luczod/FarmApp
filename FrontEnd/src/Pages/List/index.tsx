@@ -55,9 +55,8 @@ const List: React.FC = () => {
   const { tipo } = useParams();
   const [data, setData] = useState<IData[]>([]);
   const [monthSelected, setMonthSelected] = useState<string>(capitalized);
-  const [yearSelected, setYearSelected] = useState<number>(
-    new Date().getFullYear()
-  );
+  const [yearSelected, setYearSelected] = useState<number>(2022);
+  // new Date().getFullYear()
 
   const pageData = useMemo(() => {
     return tipo === "entry-balance"
