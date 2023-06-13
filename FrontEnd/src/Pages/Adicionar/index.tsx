@@ -68,7 +68,7 @@ const AdcionarBox: React.FC = () => {
           defaultValue={yearSelected}
         />
       </ConatentHeader>
-      <FormBox />
+      <FormBox Mes={monthSelected} Ano={yearSelected.toString()} />
     </>
   );
 };

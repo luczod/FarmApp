@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import listreceitas from "../../utils/receitas";
 import listnaturezas from "../../utils/naturezas";
+import axios from "axios";
 import {
   MDBBtn,
   MDBCard,
@@ -15,15 +16,38 @@ import {
   MDBRow,
   MDBTypography,
 } from "mdb-react-ui-kit";
-interface IInput {
-  ids: number;
-  nome: string;
+interface IMes {
+  Mes: string;
+  Ano: string;
 }
 
-const FormBox: React.FC = () => {
+async function AddValor(
+  valores: { Mes: string; Ano: string },
+  mes: string,
+  ano: string
+) {
+  valores.Mes = mes;
+  valores.Ano = ano;
+  const data1 = axios.post("http://localhost:5000/api/AddValor", {
+    valores,
+  });
+  return data1;
+}
+
+const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
+  const [periodo, setPeriodo] = useState({ Mes, Ano });
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setPeriodo({ ...periodo, [e.target.name]: e.target.value });
+  }
+  const submit = (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    //window.location.reload();
+
+    AddValor(periodo, Mes, Ano);
+  };
   return (
     <div className="mx-auto mt-5" style={{ maxWidth: "90%" }}>
-      <form method="POST" action="http://localhost:5000/api/AddValor">
+      <form onSubmit={submit}>
         <MDBRow>
           <MDBCol md="6" className="mb-4">
             <MDBCard className="mb-4">
@@ -41,10 +65,11 @@ const FormBox: React.FC = () => {
                       className="mb-3"
                     >
                       <input
-                        name={(index + 1).toString()}
+                        name={"N" + (index + 1)}
                         className="form-control"
+                        onChange={handleChange}
                         type="number"
-                        placeholder="valor"
+                        placeholder="00,00"
                       />
                     </MDBInputGroup>
                   );
@@ -64,29 +89,33 @@ const FormBox: React.FC = () => {
                 </MDBTypography>
               </MDBCardHeader>
               <MDBCardBody>
-                {listreceitas.map((itens, index) => {
-                  return (
-                    <MDBInputGroup
-                      key={index + 1}
-                      textBefore={itens.nome}
-                      className="mb-3"
-                    >
-                      <input
-                        name={itens.ids}
-                        className="form-control"
-                        type="number"
-                        placeholder="valor"
-                      />
-                    </MDBInputGroup>
-                  );
-                })}
-                <MDBInputGroup textBefore="Receita Total" className="mb-3">
+                <MDBInputGroup textBefore="Volume do Leite" className="mb-3">
                   <input
+                    name="R1"
                     className="form-control"
-                    type="text"
-                    placeholder="valor"
-                    value={"45"}
-                    readOnly
+                    type="flaot"
+                    onChange={handleChange}
+                    placeholder="000.000,00"
+                  />
+                </MDBInputGroup>
+                <MDBInputGroup textBefore="Preço do Leite" className="mb-3">
+                  <input
+                    name="R2"
+                    className="form-control"
+                    type="number"
+                    onChange={handleChange}
+                    placeholder="0,00"
+                  />
+                </MDBInputGroup>
+
+                <MDBInputGroup textBefore="Venda de Animais" className="mb-3">
+                  <input
+                    name="R3"
+                    className="form-control"
+                    type="number"
+                    step="0.01"
+                    onChange={handleChange}
+                    placeholder="000.000,00"
                   />
                 </MDBInputGroup>
                 <MDBBtn type="submit" size="lg" color="success" noRipple block>

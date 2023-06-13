@@ -9,6 +9,37 @@ import Logger from "../../config/logger";
  ou criar uma tabela cheia de input
  os inputs terão handlechange
  */
+let receitaLeite: number;
+let receitaTotal: number;
+interface LooseObject {
+  [key: string]: number;
+}
+let valores: LooseObject = {};
+
+interface IItens {
+  Mes: string;
+  Ano: string;
+  N1: string;
+  N2: string;
+  N3: string;
+  N4: string;
+  N5: string;
+  N6: string;
+  N7: string;
+  N8: string;
+  N9: string;
+  N10: string;
+  N11: string;
+  N12: string;
+  N13: string;
+  N14: string;
+  N15: string;
+  N16: string;
+  N17: string;
+  R1: string;
+  R2: string;
+  R3: string;
+}
 export default class TaskController {
   //getalldatas
   static async ShowData(req: Request, res: Response) {
@@ -327,6 +358,45 @@ export default class TaskController {
   }
   //
   static async AddValores(req: Request, res: Response) {
-    console.log(req.body);
+    let { Mes, Ano } = req.body.valores;
+    let dataInt!: string;
+
+    receitaLeite = Number(req.body.valores.R1) * Number(req.body.valores.R2);
+    receitaTotal = receitaLeite + Number(req.body.valores.R3);
+    Mes = Mes.replace(/["\[\]]/g, "");
+
+    let Itens!: IItens;
+    Itens = req.body.valores;
+
+    valores.N1 = (Number(Itens.N1) / 100) * receitaTotal;
+    valores.N2 = (Number(Itens.N2) / 100) * receitaTotal;
+    valores.N3 = (Number(Itens.N3) / 100) * receitaTotal;
+    valores.N4 = (Number(Itens.N4) / 100) * receitaTotal;
+    valores.N5 = (Number(Itens.N5) / 100) * receitaTotal;
+    valores.N6 = (Number(Itens.N6) / 100) * receitaTotal;
+    valores.N7 = (Number(Itens.N7) / 100) * receitaTotal;
+    valores.N8 = (Number(Itens.N8) / 100) * receitaTotal;
+    valores.N9 = (Number(Itens.N9) / 100) * receitaTotal;
+    valores.N10 = (Number(Itens.N10) / 100) * receitaTotal;
+    valores.N11 = (Number(Itens.N11) / 100) * receitaTotal;
+    valores.N12 = (Number(Itens.N12) / 100) * receitaTotal;
+    valores.N13 = (Number(Itens.N13) / 100) * receitaTotal;
+    valores.N14 = (Number(Itens.N14) / 100) * receitaTotal;
+    valores.N15 = (Number(Itens.N15) / 100) * receitaTotal;
+    valores.N16 = (Number(Itens.N16) / 100) * receitaTotal;
+    valores.N17 = (Number(Itens.N17) / 100) * receitaTotal;
+
+    console.log(valores.N5, receitaTotal);
+
+    const sql: string = `select id_data  from te."Datam" d 
+                          where d.mes = '${Mes}' and d.ano = '${Ano}' `;
+    db.query(sql, (err, result) => {
+      if (err) {
+        Logger.error(err.message);
+      } else {
+        let resultado = result.rows.length > 1 ? result.rows : result.rows[0];
+        dataInt = resultado.id_data;
+      }
+    });
   }
 }
