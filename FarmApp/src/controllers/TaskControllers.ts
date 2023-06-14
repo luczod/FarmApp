@@ -365,7 +365,6 @@ export default class TaskController {
   //
   static async AddValores(req: Request, res: Response) {
     let { Mes, Ano } = req.body.valores;
-    let dataInt!: string;
 
     receitaLeite =
       Number(fommatted(req.body.valores.R1)) *
@@ -394,18 +393,48 @@ export default class TaskController {
     valores.N16 = (Number(fommatted(Itens.N16)) / 100) * receitaTotal;
     valores.N17 = (Number(fommatted(Itens.N17)) / 100) * receitaTotal;
 
+    let dataInt: number;
     const sqlData: string = `select id_data  from te."Datam" d 
                           where d.mes = '${Mes}' and d.ano = '${Ano}' `;
+
     db.query(sqlData, (err, result) => {
       if (err) {
         Logger.error(err.message);
       } else {
         let resultado = result.rows.length > 1 ? result.rows : result.rows[0];
         dataInt = resultado.id_data;
+        const sqlInset: string = `insert into te."LanNatureza"(valor,id_data,natureza)
+                                values (${valores.N1},${dataInt},1),
+                                       (${valores.N2},${dataInt},2)
+                                       (${valores.N3},${dataInt},3)
+                                       (${valores.N4},${dataInt},4)
+                                       (${valores.N5},${dataInt},5)
+                                       (${valores.N6},${dataInt},6)
+                                       (${valores.N7},${dataInt},7)
+                                       (${valores.N8},${dataInt},8)
+                                       (${valores.N9},${dataInt},9)
+                                       (${valores.N10},${dataInt},10)
+                                       (${valores.N11},${dataInt},11)
+                                       (${valores.N12},${dataInt},12)
+                                       (${valores.N13},${dataInt},13)
+                                       (${valores.N14},${dataInt},14)
+                                       (${valores.N15},${dataInt},15)
+                                       (${valores.N16},${dataInt},16)
+                                       (${valores.N17},${dataInt},17)`;
+
+        if (dataInt > 42) {
+          db.query(sqlInset, (err, result) => {
+            if (err) {
+              Logger.error(err.message);
+              res.json({ msg: false });
+            } else {
+              res.json({ msg: true });
+            }
+          });
+        } else {
+          res.json({ msg: false });
+        }
       }
     });
-
-    const sqlInseet: string = `insert into "LanNatureza" (valor,id_data,natureza)
-                                values (${valores.N1},${dataInt},${1})`;
   }
 }

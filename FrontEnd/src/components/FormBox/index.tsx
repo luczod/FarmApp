@@ -49,9 +49,11 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setPeriodo({ ...periodo, [e.target.name]: e.target.value });
   }
-  const submit = (e: React.ChangeEvent<HTMLFormElement>) => {
+  const submit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    AddValor(periodo, Mes, Ano);
+    let msg = await AddValor(periodo, Mes, Ano);
+    console.log(msg.data);
+
     //window.location.reload();
   };
   return (
@@ -103,7 +105,7 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
                   <input
                     name="R1"
                     className="form-control"
-                    type="flaot"
+                    type="text"
                     onChange={handleChange}
                     onKeyDown={handleKeyPress}
                     placeholder="000.000,00"
@@ -113,7 +115,7 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
                   <input
                     name="R2"
                     className="form-control"
-                    type="number"
+                    type="text"
                     onChange={handleChange}
                     onKeyDown={handleKeyPress}
                     placeholder="0,00"
@@ -124,7 +126,7 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
                   <input
                     name="R3"
                     className="form-control"
-                    type="number"
+                    type="text"
                     step="0.01"
                     onChange={handleChange}
                     onKeyDown={handleKeyPress}
