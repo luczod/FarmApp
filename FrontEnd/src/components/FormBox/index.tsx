@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent, KeyboardEvent } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import listreceitas from "../../utils/receitas";
+import restrictedKeys from "../../utils/restrictkeyCode";
+
 import listnaturezas from "../../utils/naturezas";
 import axios from "axios";
 import {
@@ -16,6 +17,7 @@ import {
   MDBRow,
   MDBTypography,
 } from "mdb-react-ui-kit";
+
 interface IMes {
   Mes: string;
   Ano: string;
@@ -34,6 +36,14 @@ async function AddValor(
   return data1;
 }
 
+const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+  // Add more keys to restrict as needed
+
+  if (!restrictedKeys.includes(e.code)) {
+    e.preventDefault();
+  }
+};
+
 const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
   const [periodo, setPeriodo] = useState({ Mes, Ano });
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -41,9 +51,8 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
   }
   const submit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    //window.location.reload();
-
     AddValor(periodo, Mes, Ano);
+    //window.location.reload();
   };
   return (
     <div className="mx-auto mt-5" style={{ maxWidth: "90%" }}>
@@ -53,7 +62,7 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
             <MDBCard className="mb-4">
               <MDBCardHeader className="py-3" background="success">
                 <MDBTypography tag="h5" className="mb-0" color="white">
-                  Natureza
+                  Natureza (%)
                 </MDBTypography>
               </MDBCardHeader>
               <MDBCardBody>
@@ -68,7 +77,8 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
                         name={"N" + (index + 1)}
                         className="form-control"
                         onChange={handleChange}
-                        type="number"
+                        onKeyDown={handleKeyPress}
+                        type="text"
                         placeholder="00,00"
                       />
                     </MDBInputGroup>
@@ -85,7 +95,7 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
             <MDBCard className="mb-4">
               <MDBCardHeader className="py-3" background="success">
                 <MDBTypography tag="h5" className="mb-0" color="white">
-                  Receitas
+                  Receitas (R$)
                 </MDBTypography>
               </MDBCardHeader>
               <MDBCardBody>
@@ -95,6 +105,7 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
                     className="form-control"
                     type="flaot"
                     onChange={handleChange}
+                    onKeyDown={handleKeyPress}
                     placeholder="000.000,00"
                   />
                 </MDBInputGroup>
@@ -104,6 +115,7 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
                     className="form-control"
                     type="number"
                     onChange={handleChange}
+                    onKeyDown={handleKeyPress}
                     placeholder="0,00"
                   />
                 </MDBInputGroup>
@@ -115,6 +127,7 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
                     type="number"
                     step="0.01"
                     onChange={handleChange}
+                    onKeyDown={handleKeyPress}
                     placeholder="000.000,00"
                   />
                 </MDBInputGroup>

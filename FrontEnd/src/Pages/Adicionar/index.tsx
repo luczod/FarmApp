@@ -7,7 +7,6 @@ import ConatentHeader from "../../components/ContentHeader";
 
 import listOfMonths from "../../utils/months";
 import listOfYears from "../../utils/years";
-import listNatureza from "../../utils/naturezas";
 import { Container } from "./styles";
 
 const AdcionarBox: React.FC = () => {

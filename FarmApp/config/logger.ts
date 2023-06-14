@@ -1,5 +1,6 @@
 import winston from "winston";
 import config from "config";
+import { allColors } from "winston/lib/winston/config";
 
 const levels = {
   error: 0,
@@ -34,7 +35,9 @@ const format = winston.format.combine(
 );
 
 const transports = [
-  new winston.transports.Console(),
+  new winston.transports.Console({
+    format: winston.format.colorize({ level: false }),
+  }),
   new winston.transports.File({
     filename: "logs/error.log",
     level: "error",

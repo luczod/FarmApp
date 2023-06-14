@@ -40,6 +40,12 @@ interface IItens {
   R2: string;
   R3: string;
 }
+
+function fommatted(valor: string) {
+  valor = valor.replace(/\./g, "");
+  valor = valor.replace(/\,/g, ".");
+  return valor;
+}
 export default class TaskController {
   //getalldatas
   static async ShowData(req: Request, res: Response) {
@@ -361,36 +367,36 @@ export default class TaskController {
     let { Mes, Ano } = req.body.valores;
     let dataInt!: string;
 
-    receitaLeite = Number(req.body.valores.R1) * Number(req.body.valores.R2);
-    receitaTotal = receitaLeite + Number(req.body.valores.R3);
+    receitaLeite =
+      Number(fommatted(req.body.valores.R1)) *
+      Number(fommatted(req.body.valores.R2));
+    receitaTotal = receitaLeite + Number(fommatted(req.body.valores.R3));
     Mes = Mes.replace(/["\[\]]/g, "");
 
     let Itens!: IItens;
     Itens = req.body.valores;
 
-    valores.N1 = (Number(Itens.N1) / 100) * receitaTotal;
-    valores.N2 = (Number(Itens.N2) / 100) * receitaTotal;
-    valores.N3 = (Number(Itens.N3) / 100) * receitaTotal;
-    valores.N4 = (Number(Itens.N4) / 100) * receitaTotal;
-    valores.N5 = (Number(Itens.N5) / 100) * receitaTotal;
-    valores.N6 = (Number(Itens.N6) / 100) * receitaTotal;
-    valores.N7 = (Number(Itens.N7) / 100) * receitaTotal;
-    valores.N8 = (Number(Itens.N8) / 100) * receitaTotal;
-    valores.N9 = (Number(Itens.N9) / 100) * receitaTotal;
-    valores.N10 = (Number(Itens.N10) / 100) * receitaTotal;
-    valores.N11 = (Number(Itens.N11) / 100) * receitaTotal;
-    valores.N12 = (Number(Itens.N12) / 100) * receitaTotal;
-    valores.N13 = (Number(Itens.N13) / 100) * receitaTotal;
-    valores.N14 = (Number(Itens.N14) / 100) * receitaTotal;
-    valores.N15 = (Number(Itens.N15) / 100) * receitaTotal;
-    valores.N16 = (Number(Itens.N16) / 100) * receitaTotal;
-    valores.N17 = (Number(Itens.N17) / 100) * receitaTotal;
+    valores.N1 = (Number(fommatted(Itens.N1)) / 100) * receitaTotal;
+    valores.N2 = (Number(fommatted(Itens.N2)) / 100) * receitaTotal;
+    valores.N3 = (Number(fommatted(Itens.N3)) / 100) * receitaTotal;
+    valores.N4 = (Number(fommatted(Itens.N4)) / 100) * receitaTotal;
+    valores.N5 = (Number(fommatted(Itens.N5)) / 100) * receitaTotal;
+    valores.N6 = (Number(fommatted(Itens.N6)) / 100) * receitaTotal;
+    valores.N7 = (Number(fommatted(Itens.N7)) / 100) * receitaTotal;
+    valores.N8 = (Number(fommatted(Itens.N8)) / 100) * receitaTotal;
+    valores.N9 = (Number(fommatted(Itens.N9)) / 100) * receitaTotal;
+    valores.N10 = (Number(fommatted(Itens.N10)) / 100) * receitaTotal;
+    valores.N11 = (Number(fommatted(Itens.N11)) / 100) * receitaTotal;
+    valores.N12 = (Number(fommatted(Itens.N12)) / 100) * receitaTotal;
+    valores.N13 = (Number(fommatted(Itens.N13)) / 100) * receitaTotal;
+    valores.N14 = (Number(fommatted(Itens.N14)) / 100) * receitaTotal;
+    valores.N15 = (Number(fommatted(Itens.N15)) / 100) * receitaTotal;
+    valores.N16 = (Number(fommatted(Itens.N16)) / 100) * receitaTotal;
+    valores.N17 = (Number(fommatted(Itens.N17)) / 100) * receitaTotal;
 
-    console.log(valores.N5, receitaTotal);
-
-    const sql: string = `select id_data  from te."Datam" d 
+    const sqlData: string = `select id_data  from te."Datam" d 
                           where d.mes = '${Mes}' and d.ano = '${Ano}' `;
-    db.query(sql, (err, result) => {
+    db.query(sqlData, (err, result) => {
       if (err) {
         Logger.error(err.message);
       } else {
@@ -398,5 +404,8 @@ export default class TaskController {
         dataInt = resultado.id_data;
       }
     });
+
+    const sqlInseet: string = `insert into "LanNatureza" (valor,id_data,natureza)
+                                values (${valores.N1},${dataInt},${1})`;
   }
 }
