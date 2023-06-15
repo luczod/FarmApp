@@ -46,7 +46,7 @@ export const Container = styled.div<IContainerProps>`
   }
 
   > span {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 500;
   }
 
@@ -58,12 +58,12 @@ export const Container = styled.div<IContainerProps>`
 
   @media (max-width: 770px) {
     > span {
-      font-size: 14px;
+      font-size: 16px;
     }
 
     > h1 {
       word-wrap: break-word;
-      font-size: 22px;
+      font-size: 16px;
 
       strong {
         display: inline-block;
@@ -76,8 +76,13 @@ export const Container = styled.div<IContainerProps>`
   @media (max-width: 420px) {
     width: 100%;
 
+    > span {
+      font-size: 30px;
+    }
+
     > h1 {
       display: flex;
+      font-size: 30px;
 
       strong {
         position: initial;

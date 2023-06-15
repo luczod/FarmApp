@@ -40,8 +40,8 @@ const CardBox: React.FC<ICardBoxProps> = ({
 
       <h1>{amount}</h1>
 
-      <small>{footerlabel}</small>
-      <img src={iconSelected} alt={titulo} />
+      {/* <small>{footerlabel}</small>
+      <img src={iconSelected} alt={titulo} /> */}
     </Container>
   );
 };

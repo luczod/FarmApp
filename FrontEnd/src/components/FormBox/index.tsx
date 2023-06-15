@@ -82,6 +82,7 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
                         onKeyDown={handleKeyPress}
                         type="text"
                         placeholder="00,00"
+                        required
                       />
                     </MDBInputGroup>
                   );
@@ -109,6 +110,7 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
                     onChange={handleChange}
                     onKeyDown={handleKeyPress}
                     placeholder="000.000,00"
+                    required
                   />
                 </MDBInputGroup>
                 <MDBInputGroup textBefore="Preço do Leite" className="mb-3">
@@ -119,6 +121,7 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
                     onChange={handleChange}
                     onKeyDown={handleKeyPress}
                     placeholder="0,00"
+                    required
                   />
                 </MDBInputGroup>
 
@@ -131,6 +134,7 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
                     onChange={handleChange}
                     onKeyDown={handleKeyPress}
                     placeholder="000.000,00"
+                    required
                   />
                 </MDBInputGroup>
                 <MDBBtn type="submit" size="lg" color="success" noRipple block>

@@ -18,7 +18,7 @@ const animate = keyframes`
     }
 `;
 
-export const Container = styled.div`
+export const Containers = styled.div`
   width: 100%;
 
   display: flex;

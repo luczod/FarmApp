@@ -370,10 +370,25 @@ export default class TaskController {
       Number(fommatted(req.body.valores.R1)) *
       Number(fommatted(req.body.valores.R2));
     receitaTotal = receitaLeite + Number(fommatted(req.body.valores.R3));
+    let vendaAnimais = Number(fommatted(req.body.valores.R3));
+    let volumeLeite = Number(fommatted(req.body.valores.R1));
     Mes = Mes.replace(/["\[\]]/g, "");
 
     let Itens!: IItens;
     Itens = req.body.valores;
+
+    const sqlReceita: string = `insert into te."LanReceita"(valor,iddata,receita)
+                                values (${volumeLeite},47,1),
+                                       (${receitaLeite},47,2),
+                                       (${vendaAnimais},47,3),
+                                       (${receitaTotal},47,4)`;
+
+    db.query(sqlReceita, (err, result) => {
+      if (err) {
+        Logger.error(err.message);
+        res.json({ msg: false });
+      }
+    });
 
     valores.N1 = (Number(fommatted(Itens.N1)) / 100) * receitaTotal;
     valores.N2 = (Number(fommatted(Itens.N2)) / 100) * receitaTotal;

@@ -26,7 +26,7 @@ export const Container = styled.li`
 
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 
   animation: ${animate} 0.5s ease;
 
@@ -50,6 +50,35 @@ export const Container = styled.li`
   > div span {
     font-size: 22px;
     font-weight: 500;
+  }
+  @media (max-width: 850px) {
+    white-space: nowrap;
+
+    flex-direction: column;
+    > div span {
+      font-size: 25px;
+    }
+    > h3 {
+      font-size: 25px;
+      padding-left: 10px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+
+    > div span {
+      max-width: 310px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      font-size: 22px;
+    }
+    > h3 {
+      font-size: 25px;
+      padding-left: 10px;
+    }
   }
 `;
 export const Tag = styled.div<ITagProps>`

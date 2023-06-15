@@ -253,14 +253,15 @@ const Dashboard: React.FC = () => {
             titulo={`${monthSelected} de ${yearSelected} - Despesas em porcentagem(%)`}
             fillColor="#d3d01a"
           />
-          <ConatentHeader lineColor="#D9D9D9">
-            <SelectInput
-              options={naturezas}
-              onChange={(e) => handleNaturezaSelected(e.target.value)}
-              defaultValue={naturezaSelected}
-            />
-          </ConatentHeader>
-
+        </Content>
+        <ConatentHeader lineColor="#D9D9D9">
+          <SelectInput
+            options={naturezas}
+            onChange={(e) => handleNaturezaSelected(e.target.value)}
+            defaultValue={naturezaSelected}
+          />
+        </ConatentHeader>
+        <Content>
           <BarChartBox
             data={dataAno}
             titulo={`${yearSelected} - Histórico de ${naturezaSelected}(%) `}

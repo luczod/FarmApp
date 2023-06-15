@@ -16,9 +16,12 @@ const ConatentHeader: React.FC<IContentHeaderProps> = ({
   return (
     <>
       <Container>
-        <TitleContainer lineColor={lineColor}>
-          <h1>{title}</h1>
-        </TitleContainer>
+        {title && (
+          <TitleContainer lineColor={lineColor}>
+            <h1>{title}</h1>
+          </TitleContainer>
+        )}
+
         <Controller>
           {/* chama a funcao selectinput tres vezes */}
           {children}

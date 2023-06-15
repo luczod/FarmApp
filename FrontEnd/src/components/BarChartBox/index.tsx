@@ -9,7 +9,7 @@ import {
   Tooltip,
 } from "recharts";
 
-import { Container, ChartContainer, Header, LegendContainer } from "./styles";
+import { Containers, ChartContainer, Header, LegendContainer } from "./styles";
 
 interface IBarChartBoProps {
   data: {
@@ -25,7 +25,7 @@ const BarChartBox: React.FC<IBarChartBoProps> = ({
   titulo,
   fillColor,
 }) => (
-  <Container>
+  <Containers>
     <Header>
       <h2>{titulo}</h2>
 
@@ -51,14 +51,14 @@ const BarChartBox: React.FC<IBarChartBoProps> = ({
             scale="point"
             padding={{ left: 10, right: 10 }}
           />
-          <YAxis type="number" domain={[0, 50]} />
+          <YAxis type="number" domain={[0, 30]} />
           <Tooltip />
           <CartesianGrid strokeDasharray="3 3" />
           <Bar dataKey="valor" fill={fillColor} background={{ fill: "#eee" }} />
         </BarChart>
       </ResponsiveContainer>
     </ChartContainer>
-  </Container>
+  </Containers>
 );
 
 export default BarChartBox;
