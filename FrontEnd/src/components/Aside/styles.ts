@@ -34,6 +34,7 @@ export const Container = styled.div<IContainerProps>`
       css`
         border: none;
         border-bottom: 1px solid ${(props) => props.theme.colors.gray};
+        background-color: ${(props) => props.theme.colors.black};
       `};
   }
 `;

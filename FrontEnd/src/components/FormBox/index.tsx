@@ -57,10 +57,10 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
     //window.location.reload();
   };
   return (
-    <div className="mx-auto mt-5" style={{ maxWidth: "90%" }}>
+    <div className="mx-auto lg-5" style={{ maxWidth: "100%" }}>
       <form onSubmit={submit}>
         <MDBRow>
-          <MDBCol md="6" className="mb-4">
+          <MDBCol lg="6" className="lg-4">
             <MDBCard className="mb-4">
               <MDBCardHeader className="py-3" background="success">
                 <MDBTypography tag="h5" className="mb-0" color="white">
@@ -94,7 +94,7 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
           </MDBCol>
           {/*  */}
 
-          <MDBCol md="6" className="mb-4">
+          <MDBCol lg="6" className="lg-4">
             <MDBCard className="mb-4">
               <MDBCardHeader className="py-3" background="success">
                 <MDBTypography tag="h5" className="mb-0" color="white">

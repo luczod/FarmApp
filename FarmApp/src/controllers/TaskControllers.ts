@@ -3,6 +3,8 @@ import { Request, Response } from "express";
 import db from "../../config/db";
 //Logger
 import Logger from "../../config/logger";
+import TaskModel from "../models/Taskmodel";
+import { error } from "console";
 
 /**
  Eu posso armazenar separado pegando apenas o target.value
@@ -377,18 +379,19 @@ export default class TaskController {
     let Itens!: IItens;
     Itens = req.body.valores;
 
-    const sqlReceita: string = `insert into te."LanReceita"(valor,iddata,receita)
-                                values (${volumeLeite},47,1),
-                                       (${receitaLeite},47,2),
-                                       (${vendaAnimais},47,3),
-                                       (${receitaTotal},47,4)`;
+    let inserirReceita = await TaskModel.InserirValores(
+      Mes,
+      Ano,
+      volumeLeite,
+      vendaAnimais,
+      receitaLeite,
+      receitaTotal
+    );
 
-    db.query(sqlReceita, (err, result) => {
-      if (err) {
-        Logger.error(err.message);
-        res.json({ msg: false });
-      }
-    });
+    if (!inserirReceita) {
+      res.json({ msg: false });
+      throw error("Erro em inserir receita");
+    }
 
     valores.N1 = (Number(fommatted(Itens.N1)) / 100) * receitaTotal;
     valores.N2 = (Number(fommatted(Itens.N2)) / 100) * receitaTotal;

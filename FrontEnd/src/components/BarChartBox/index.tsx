@@ -40,8 +40,8 @@ const BarChartBox: React.FC<IBarChartBoProps> = ({
           data={data}
           margin={{
             top: 5,
+            left: -30,
             right: 30,
-            left: 20,
             bottom: 5,
           }}
           barSize={20}
