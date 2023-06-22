@@ -5,6 +5,7 @@ import SelectInput from "../../components/SelectInput";
 import ConatentHeader from "../../components/ContentHeader";
 import CardBox from "../../components/CardBox";
 import BarChartBox from "../../components/BarChartBox";
+import LineChartBox from "../../components/LineChartBox";
 
 import axios from "axios";
 
@@ -262,7 +263,7 @@ const Dashboard: React.FC = () => {
           />
         </ConatentHeader>
         <Content>
-          <BarChartBox
+          <LineChartBox
             data={dataAno}
             titulo={`${yearSelected} - Histórico de ${naturezaSelected}(%) `}
             fillColor="#08A81E"
