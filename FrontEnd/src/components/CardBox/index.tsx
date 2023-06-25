@@ -1,8 +1,4 @@
-import React, { useMemo } from "react";
-
-import dolarImg from "../../assets/dolar.svg";
-import arrowUpImg from "../../assets/arrow-up.svg";
-import arrowDownImg from "../../assets/arrow-down.svg";
+import React from "react";
 
 import { Container } from "./styles";
 
@@ -18,22 +14,8 @@ const CardBox: React.FC<ICardBoxProps> = ({
   titulo,
   amount,
   footerlabel,
-  icon,
   color,
 }) => {
-  const iconSelected = useMemo(() => {
-    switch (icon) {
-      case "dolar":
-        return dolarImg;
-      case "arrowUp":
-        return arrowUpImg;
-      case "arrowDown":
-        return arrowDownImg;
-      default:
-        return undefined;
-    }
-  }, [icon]);
-
   return (
     <Container color={color}>
       <span>{titulo}</span>

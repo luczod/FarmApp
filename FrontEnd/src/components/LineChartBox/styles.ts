@@ -50,6 +50,13 @@ export const Header = styled.header`
     padding-left: 16px;
   }
 
+  @media (max-width: 600px) {
+    > h2 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
   @media (max-width: 1200px) {
     flex-direction: column;
   }

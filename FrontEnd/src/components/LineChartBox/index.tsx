@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import {
   LineChart,
   Line,
@@ -7,6 +7,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  LabelList,
   ResponsiveContainer,
 } from "recharts";
 
@@ -21,6 +22,35 @@ interface ILineChartBoxProps {
   fillColor: string;
 }
 
+const CustomizedLabel: React.FC<any> = (props: any) => {
+  const { x, y, stroke, value } = props;
+
+  return (
+    <text x={x} y={y} dy={-4} fill={stroke} fontSize={15} textAnchor="middle">
+      {value}
+    </text>
+  );
+};
+
+const CustomizedAxisTick: React.FC<any> = (props: any) => {
+  const { x, y, payload } = props;
+
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <text
+        x={0}
+        y={0}
+        dy={16}
+        textAnchor="middle"
+        fill="#666"
+        transform="rotate(-35)"
+      >
+        {payload.value}
+      </text>
+    </g>
+  );
+};
+
 const LineChartBox: React.FC<ILineChartBoxProps> = ({
   data,
   titulo,
@@ -29,8 +59,6 @@ const LineChartBox: React.FC<ILineChartBoxProps> = ({
   <Containers>
     <Header>
       <h2>{titulo}</h2>
-
-      <LegendContainer></LegendContainer>
     </Header>
 
     <ChartContainer>
@@ -40,14 +68,14 @@ const LineChartBox: React.FC<ILineChartBoxProps> = ({
           height={300}
           data={data}
           margin={{
-            top: 5,
+            top: 15,
+            left: -30,
             right: 30,
-            left: 20,
-            bottom: 5,
+            bottom: -10,
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="nameX" />
+          <XAxis dataKey="nameX" height={80} tick={<CustomizedAxisTick />} />
           <YAxis />
           <Tooltip />
           <Legend />
@@ -56,7 +84,9 @@ const LineChartBox: React.FC<ILineChartBoxProps> = ({
             dataKey="valor"
             stroke={fillColor}
             activeDot={{ r: 8 }}
-          />
+          >
+            <LabelList content={<CustomizedLabel />} />
+          </Line>
         </LineChart>
       </ResponsiveContainer>
     </ChartContainer>

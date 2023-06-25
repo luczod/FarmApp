@@ -51,7 +51,7 @@ const BarChartBox: React.FC<IBarChartBoProps> = ({
             scale="point"
             padding={{ left: 10, right: 10 }}
           />
-          <YAxis type="number" domain={[0, 30]} />
+          <YAxis type="number" />
           <Tooltip />
           <CartesianGrid strokeDasharray="3 3" />
           <Bar dataKey="valor" fill={fillColor} background={{ fill: "#eee" }} />

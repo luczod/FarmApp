@@ -4,9 +4,10 @@ import { Pool } from "pg";
 const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASS;
 const dbname = process.env.DB_NAME;
+const dbhost = process.env.DB_HOST;
 
 const pool = new Pool({
-  host: "localhost",
+  host: dbhost,
   port: 5432,
   database: dbname,
   user: dbUser,
@@ -15,10 +16,5 @@ const pool = new Pool({
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
 });
-
-async function clearCache() {
-  await pool.end(); // close all connections in the pool
-}
-// clearCache();
 
 export default pool;
