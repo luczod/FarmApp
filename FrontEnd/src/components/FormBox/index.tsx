@@ -1,6 +1,8 @@
 import React, { useState, ChangeEvent, KeyboardEvent } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import restrictedKeys from "../../utils/restrictkeyCode";
+import "react-toastify/dist/ReactToastify.css";
+import { Toast } from "react-toastify/dist/components";
 
 import listnaturezas from "../../utils/naturezas";
 import axios from "axios";
@@ -17,6 +19,8 @@ import {
   MDBRow,
   MDBTypography,
 } from "mdb-react-ui-kit";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 interface IMes {
   Mes: string;
@@ -46,6 +50,8 @@ const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
 
 const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
   const [periodo, setPeriodo] = useState({ Mes, Ano });
+  const navigate = useNavigate();
+
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setPeriodo({ ...periodo, [e.target.name]: e.target.value });
   }
@@ -53,6 +59,16 @@ const FormBox: React.FC<IMes> = ({ Mes, Ano }) => {
     e.preventDefault();
     let msg = await AddValor(periodo, Mes, Ano);
     console.log(msg.data);
+    if (msg.data) {
+      toast.success("adiconado com sucesso", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+      navigate("/");
+    } else {
+      toast.error("Houve algum erro", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+    }
 
     //window.location.reload();
   };

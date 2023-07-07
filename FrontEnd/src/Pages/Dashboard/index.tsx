@@ -55,6 +55,7 @@ interface IData {
 interface IitensDespesas {
   nomenatureza: string;
   valor: string;
+  receitatotal: string;
 }
 
 interface IitensDespesasAno {
@@ -174,7 +175,8 @@ const Dashboard: React.FC = () => {
         console.log(gastos);
 
         const formattedData = gastos.map((itens: IitensDespesas) => {
-          formatValue = (Number(itens.valor) * 100) / gain;
+          formatValue =
+            (Number(itens.valor) * 100) / Number(itens.receitatotal);
           formatValue = Number(formatValue.toFixed(2));
           return {
             nameX: itens.nomenatureza,
