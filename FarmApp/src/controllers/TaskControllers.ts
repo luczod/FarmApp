@@ -106,6 +106,15 @@ export default class TaskController {
     res.status(200).json(resultado);
   }
   //
+  static async getAnimalReceita(req: Request, res: Response) {
+    let mes = req.body.mes;
+    const { ano } = req.body;
+    mes = mes.replace(/["\[\]]/g, "");
+
+    let resultado = await TaskModel.queryAnimalReceita(mes, ano);
+    res.status(200).json(resultado);
+  }
+  //
   static async manyReceitaDataInteira(req: Request, res: Response) {
     let mes = req.body.mes;
     const { ano } = req.body;
@@ -220,24 +229,6 @@ export default class TaskController {
       throw error("Erro em inserir receita");
     }
 
-    valores.N1 = (Number(fommatted(Itens.N1)) / 100) * receitaTotal;
-    valores.N2 = (Number(fommatted(Itens.N2)) / 100) * receitaTotal;
-    valores.N3 = (Number(fommatted(Itens.N3)) / 100) * receitaTotal;
-    valores.N4 = (Number(fommatted(Itens.N4)) / 100) * receitaTotal;
-    valores.N5 = (Number(fommatted(Itens.N5)) / 100) * receitaTotal;
-    valores.N6 = (Number(fommatted(Itens.N6)) / 100) * receitaTotal;
-    valores.N7 = (Number(fommatted(Itens.N7)) / 100) * receitaTotal;
-    valores.N8 = (Number(fommatted(Itens.N8)) / 100) * receitaTotal;
-    valores.N9 = (Number(fommatted(Itens.N9)) / 100) * receitaTotal;
-    valores.N10 = (Number(fommatted(Itens.N10)) / 100) * receitaTotal;
-    valores.N11 = (Number(fommatted(Itens.N11)) / 100) * receitaTotal;
-    valores.N12 = (Number(fommatted(Itens.N12)) / 100) * receitaTotal;
-    valores.N13 = (Number(fommatted(Itens.N13)) / 100) * receitaTotal;
-    valores.N14 = (Number(fommatted(Itens.N14)) / 100) * receitaTotal;
-    valores.N15 = (Number(fommatted(Itens.N15)) / 100) * receitaTotal;
-    valores.N16 = (Number(fommatted(Itens.N16)) / 100) * receitaTotal;
-    valores.N17 = (Number(fommatted(Itens.N17)) / 100) * receitaTotal;
-
     let dataInt: number;
     const sqlData: string = `select id_data  from te."Datam" d 
                           where d.mes = '${Mes}' and d.ano = '${Ano}' `;
@@ -249,23 +240,23 @@ export default class TaskController {
         let resultado = result.rows.length > 1 ? result.rows : result.rows[0];
         dataInt = resultado.id_data;
         const sqlInset: string = `insert into te."LanNatureza"(valor,id_data,natureza)
-                                values (${valores.N1},${dataInt},1),
-                                       (${valores.N2},${dataInt},2)
-                                       (${valores.N3},${dataInt},3)
-                                       (${valores.N4},${dataInt},4)
-                                       (${valores.N5},${dataInt},5)
-                                       (${valores.N6},${dataInt},6)
-                                       (${valores.N7},${dataInt},7)
-                                       (${valores.N8},${dataInt},8)
-                                       (${valores.N9},${dataInt},9)
-                                       (${valores.N10},${dataInt},10)
-                                       (${valores.N11},${dataInt},11)
-                                       (${valores.N12},${dataInt},12)
-                                       (${valores.N13},${dataInt},13)
-                                       (${valores.N14},${dataInt},14)
-                                       (${valores.N15},${dataInt},15)
-                                       (${valores.N16},${dataInt},16)
-                                       (${valores.N17},${dataInt},17)`;
+                                values (${Itens.N1},${dataInt},1),
+                                       (${Itens.N2},${dataInt},2)
+                                       (${Itens.N3},${dataInt},3)
+                                       (${Itens.N4},${dataInt},4)
+                                       (${Itens.N5},${dataInt},5)
+                                       (${Itens.N6},${dataInt},6)
+                                       (${Itens.N7},${dataInt},7)
+                                       (${Itens.N8},${dataInt},8)
+                                       (${Itens.N9},${dataInt},9)
+                                       (${Itens.N10},${dataInt},10)
+                                       (${Itens.N11},${dataInt},11)
+                                       (${Itens.N12},${dataInt},12)
+                                       (${Itens.N13},${dataInt},13)
+                                       (${Itens.N14},${dataInt},14)
+                                       (${Itens.N15},${dataInt},15)
+                                       (${Itens.N16},${dataInt},16)
+                                       (${Itens.N17},${dataInt},17)`;
 
         if (dataInt > 42) {
           db.query(sqlInset, (err, result) => {

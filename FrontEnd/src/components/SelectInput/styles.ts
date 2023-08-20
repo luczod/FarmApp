@@ -8,4 +8,5 @@ export const Container = styled.div`
 
     margin-left: 7px;
   }
+  margin-right: 8px;
 `;

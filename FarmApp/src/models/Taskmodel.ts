@@ -94,6 +94,32 @@ export default class TaskModel {
     }
   }
 
+  static async queryAnimalReceita(mes: string, ano: string) {
+    const sql: string = `select sum(valor) from te."LanReceita" lr 
+                        join te."Receita" r 
+                          on lr.receita  = r.id_receita 
+                        join te."Datam" d 
+                          on lr.iddata  = d.id_data
+                        where d.mes = ${mes} and d.ano = ${ano} and lr.receita = 3;`;
+
+    try {
+      let resultado = await db.query(sql);
+      Logger.info(resultado.rows.length);
+
+      resultado =
+        resultado.rows.length > 1 ? resultado.rows : resultado.rows[0];
+
+      return resultado;
+    } catch (err) {
+      let message = "Unknown Error";
+      if (err instanceof Error) message = err.message;
+      // we'll proceed, but let's report it
+      Logger.error(message);
+
+      return "";
+    }
+  }
+
   static async querybudgetMes(mes: string, natureza: string) {
     const sql: string = `select sum(valor) from te."LanNatureza" ln2 
                         join te."Natureza" n 
@@ -204,7 +230,8 @@ export default class TaskModel {
                           ON lr.receita  = r.id_receita 
                         join te."Datam" d 
                           ON lr.iddata = d.id_data
-                        where d.mes = ${mes} and d.ano = ${ano};`;
+                        where d.mes = ${mes} and d.ano = ${ano}
+                        order by r.id_receita;`;
 
     try {
       let resultado = await db.query(sql);

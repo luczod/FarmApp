@@ -4,7 +4,6 @@ import SelectInput from "../../components/SelectInput";
 import ConatentHeader from "../../components/ContentHeader";
 import listOfMonths from "../../utils/months";
 import listOfYears from "../../utils/years";
-import Message from "../../components/FlashMsgBox/Message";
 
 const AdcionarBox: React.FC = () => {
   const word = new Date().toLocaleString("default", { month: "long" });
@@ -64,7 +63,6 @@ const AdcionarBox: React.FC = () => {
           defaultValue={yearSelected}
         />
       </ConatentHeader>
-      <Message />
       <FormBox Mes={monthSelected} Ano={yearSelected.toString()} />
     </>
   );

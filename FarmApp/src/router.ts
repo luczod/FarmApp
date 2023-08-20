@@ -20,6 +20,7 @@ router.post("/manyDespesa", TaskController.manyDespesaDataInteira);
 router.post("/manyDespesaAno", TaskController.manyDespesaAno);
 router.post("/TotalDespesa", TaskController.getTotalDespesa);
 router.post("/TotalReceita", TaskController.getTotalReceita);
+router.post("/VendaAnimais", TaskController.getAnimalReceita);
 router.post("/AddValor", TaskController.AddValores);
 
 export default router;

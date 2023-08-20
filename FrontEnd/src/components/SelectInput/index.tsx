@@ -21,7 +21,11 @@ const SelectInput: React.FC<ISelectInputProps> = ({
   return (
     <>
       <Container>
-        <select onChange={onChange} defaultValue={defaultValue}>
+        <select
+          className="form-control"
+          onChange={onChange}
+          defaultValue={defaultValue}
+        >
           {options.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}

@@ -32,3 +32,21 @@ export default [
   "Numpad8",
   "Numpad9",
 ];
+
+/*const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+  // Add more keys to restrict as needed
+
+  if (!restrictedKeys.includes(e.code)) {
+    e.preventDefault();
+  }
+}*/
+
+/* <input
+    name="R1"
+    className="form-control"
+	type="text"
+	onChange={handleChange}
+	onKeyDown={handleKeyPress}
+	placeholder="000.000,00"
+     required
+    />*/

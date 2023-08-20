@@ -19,7 +19,7 @@ const animate = keyframes`
 `;
 
 export const Container = styled.div<IContainerProps>`
-  width: 32%;
+  width: 24%;
   height: 150px;
 
   margin: 10px 0;
@@ -55,8 +55,11 @@ export const Container = styled.div<IContainerProps>`
     position: absolute;
     bottom: 10px;
   }
+  @media (max-width: 1500px) {
+    width: 32%;
+  }
 
-  @media (max-width: 770px) {
+  @media (max-width: 870px) {
     > span {
       font-size: 16px;
     }

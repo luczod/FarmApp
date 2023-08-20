@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useCallback, useEffect } from "react";
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
+import axios from "axios";
 
 import SelectInput from "../../components/SelectInput";
 import ConatentHeader from "../../components/ContentHeader";
@@ -7,16 +8,28 @@ import CardBox from "../../components/CardBox";
 import BarChartBox from "../../components/BarChartBox";
 import LineChartBox from "../../components/LineChartBox";
 
-import axios from "axios";
-
 import listOfMonths from "../../utils/months";
 import listOfYears from "../../utils/years";
 import listNatureza from "../../utils/naturezas";
 import formatCurrency from "../../utils/formatCurrency";
-import { Content } from "./styles";
+
+import { endpoint } from "../../utils/endpoint";
+import {
+  IData,
+  IitensDespesas,
+  IitensDespesasAno,
+} from "../../utils/interfaces";
 
 async function TotalReceita(mes: string, ano: number) {
-  const data1 = axios.post("http://localhost:5000/api/TotalReceita", {
+  const data1 = axios.post(endpoint + "/api/TotalReceita", {
+    mes: `"['${mes}']"`,
+    ano,
+  });
+  return data1;
+}
+
+async function AnimalReceita(mes: string, ano: number) {
+  const data1 = axios.post(endpoint + "/api/VendaAnimais", {
     mes: `"['${mes}']"`,
     ano,
   });
@@ -24,7 +37,7 @@ async function TotalReceita(mes: string, ano: number) {
 }
 
 async function TotalDespesas(mes: string, ano: number) {
-  const data1 = axios.post("http://localhost:5000/api/TotalDespesa", {
+  const data1 = axios.post(endpoint + "/api/TotalDespesa", {
     mes: `"['${mes}']"`,
     ano,
   });
@@ -32,7 +45,7 @@ async function TotalDespesas(mes: string, ano: number) {
 }
 
 async function manyDespesas(mes: string, ano: number) {
-  const data1 = axios.post("http://localhost:5000/api/manyDespesa", {
+  const data1 = axios.post(endpoint + "/api/manyDespesa", {
     mes: `"['${mes}']"`,
     ano,
   });
@@ -40,29 +53,11 @@ async function manyDespesas(mes: string, ano: number) {
 }
 
 async function manyDespesasAno(ano: number, natureza: string) {
-  const data1 = axios.post("http://localhost:5000/api/manyDespesaAno", {
+  const data1 = axios.post(endpoint + "/api/manyDespesaAno", {
     ano: `${ano}`,
     natureza: `"['${natureza}']"`,
   });
   return data1;
-}
-
-interface IData {
-  nameX: string;
-  valor: number;
-}
-
-interface IitensDespesas {
-  nomenatureza: string;
-  valor: string;
-  receitatotal: string;
-}
-
-interface IitensDespesasAno {
-  nomenatureza: string;
-  valor: string;
-  receitatotal: string;
-  mes: string;
 }
 
 let totalBalance: number | string;
@@ -83,6 +78,7 @@ const Dashboard: React.FC = () => {
   // new Date().getFullYear()
   const [gain, setGain] = useState<number>(0);
   const [exapense, setExpense] = useState<number>(0);
+  const [gainAnimal, setGainAnimal] = useState<number>(0);
   const [data, setData] = useState<IData[]>([]);
   const [dataAno, setDataAno] = useState<IData[]>([]);
 
@@ -167,6 +163,16 @@ const Dashboard: React.FC = () => {
       }
     });
 
+    AnimalReceita(monthSelected, yearSelected).then((e) => {
+      if (e.data) {
+        let total!: number;
+        total = Number(e.data.sum);
+        setGainAnimal(total);
+      } else {
+        setGainAnimal(0);
+      }
+    });
+
     manyDespesas(monthSelected, yearSelected).then((e) => {
       if (e.data) {
         let formatValue: number;
@@ -247,6 +253,13 @@ const Dashboard: React.FC = () => {
             titulo="Despesas"
             color="#FFFFFF"
             amount={formatCurrency(exapense)}
+            footerlabel="atualizado com base nas entradas e saídas"
+            icon="arrowDown"
+          />
+          <CardBox
+            titulo="Venda de animais"
+            color="#FFFFFF"
+            amount={formatCurrency(gainAnimal)}
             footerlabel="atualizado com base nas entradas e saídas"
             icon="arrowDown"
           />
