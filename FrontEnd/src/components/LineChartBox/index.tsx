@@ -17,6 +17,7 @@ interface ILineChartBoxProps {
   data: {
     nameX: string;
     valor: number;
+    valor2?: number;
   }[];
   titulo: string;
   fillColor: string;

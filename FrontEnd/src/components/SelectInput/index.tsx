@@ -1,5 +1,6 @@
 import React from "react"; //{ ReactNode }
 import { Container } from "./styles";
+import "bootstrap/dist/css/bootstrap.css";
 
 interface ISelectInputProps {
   options: {
@@ -22,7 +23,7 @@ const SelectInput: React.FC<ISelectInputProps> = ({
     <>
       <Container>
         <select
-          className="form-control"
+          className="select"
           onChange={onChange}
           defaultValue={defaultValue}
         >

@@ -589,3 +589,569 @@
  20/08/2023 13:02:29:229  info : 10 
  20/08/2023 13:02:29:229  http : POST /api/manyDespesaAno 200 923 - 12.119 ms 
  
+ 20/08/2023 13:05:14:514  info : 10 
+ 20/08/2023 13:05:14:514  http : POST /api/manyDespesaAno 200 921 - 56.910 ms 
+ 
+ 20/08/2023 13:06:06:66  info : 10 
+ 20/08/2023 13:06:06:66  http : POST /api/manyDespesaAno 200 942 - 207.031 ms 
+ 
+ 20/08/2023 13:06:48:648  info : 1 
+ 20/08/2023 13:06:48:648  http : POST /api/TotalDespesa 200 19 - 119.418 ms 
+ 
+ 20/08/2023 13:06:48:648  info : 1 
+ 20/08/2023 13:06:48:648  http : POST /api/TotalReceita 200 20 - 129.277 ms 
+ 
+ 20/08/2023 13:06:48:648  info : 1 
+ 20/08/2023 13:06:48:648  http : POST /api/TotalReceita 200 20 - 18.028 ms 
+ 
+ 20/08/2023 13:06:48:648  info : 1 
+ 20/08/2023 13:06:48:648  http : POST /api/VendaAnimais 200 15 - 147.664 ms 
+ 
+ 20/08/2023 13:06:48:648  info : 1 
+ 20/08/2023 13:06:48:648  http : POST /api/VendaAnimais 200 15 - 6.764 ms 
+ 
+ 20/08/2023 13:06:48:648  info : 17 
+ 20/08/2023 13:06:48:648  http : POST /api/manyDespesa 200 1407 - 156.052 ms 
+ 
+ 20/08/2023 13:06:48:648  info : 17 
+ 20/08/2023 13:06:48:648  http : POST /api/manyDespesa 200 1407 - 11.074 ms 
+ 
+ 20/08/2023 13:06:48:648  info : 10 
+ 20/08/2023 13:06:48:648  http : POST /api/manyDespesaAno 200 923 - 5.815 ms 
+ 
+ 20/08/2023 13:06:48:648  info : 10 
+ 20/08/2023 13:06:48:648  http : POST /api/manyDespesaAno 200 923 - 160.005 ms 
+ 
+ 20/08/2023 13:06:48:648  info : 1 
+ 20/08/2023 13:06:48:648  http : POST /api/TotalDespesa 200 19 - 160.343 ms 
+ 
+ 20/08/2023 13:14:15:1415  info : 1 
+ 20/08/2023 13:14:15:1415  http : POST /api/TotalDespesa 200 19 - 94.723 ms 
+ 
+ 20/08/2023 13:14:15:1415  info : 1 
+ 20/08/2023 13:14:15:1415  http : POST /api/TotalReceita 200 20 - 106.469 ms 
+ 
+ 20/08/2023 13:14:15:1415  info : 1 
+ 20/08/2023 13:14:15:1415  http : POST /api/VendaAnimais 200 15 - 114.302 ms 
+ 
+ 20/08/2023 13:14:15:1415  info : 17 
+ 20/08/2023 13:14:15:1415  http : POST /api/manyDespesa 200 1407 - 117.180 ms 
+ 
+ 20/08/2023 13:14:15:1415  info : 10 
+ 20/08/2023 13:14:15:1415  http : POST /api/manyDespesaAno 200 923 - 118.429 ms 
+ 
+ 20/08/2023 13:14:18:1418  info : 1 
+ 20/08/2023 13:14:18:1418  http : POST /api/TotalDespesa 200 19 - 3.470 ms 
+ 
+ 20/08/2023 13:14:18:1418  info : 1 
+ 20/08/2023 13:14:18:1418  http : POST /api/VendaAnimais 200 15 - 3.699 ms 
+ 
+ 20/08/2023 13:14:18:1418  info : 1 
+ 20/08/2023 13:14:18:1418  http : POST /api/TotalReceita 200 20 - 5.496 ms 
+ 
+ 20/08/2023 13:14:18:1418  info : 10 
+ 20/08/2023 13:14:18:1418  http : POST /api/manyDespesaAno 200 923 - 5.332 ms 
+ 
+ 20/08/2023 13:14:18:1418  info : 17 
+ 20/08/2023 13:14:18:1418  http : POST /api/manyDespesa 200 1407 - 7.575 ms 
+ 
+ 20/08/2023 13:14:55:1455  info : 10 
+ 20/08/2023 13:14:55:1455  http : POST /api/manyDespesaAno 200 942 - 70.763 ms 
+ 
+ 20/08/2023 13:15:12:1512  info : 1 
+ 20/08/2023 13:15:12:1512  http : POST /api/TotalDespesa 200 19 - 3.722 ms 
+ 
+ 20/08/2023 13:15:12:1512  info : 1 
+ 20/08/2023 13:15:12:1512  http : POST /api/VendaAnimais 200 15 - 9.125 ms 
+ 
+ 20/08/2023 13:15:12:1512  info : 1 
+ 20/08/2023 13:15:12:1512  http : POST /api/TotalDespesa 200 19 - 6.930 ms 
+ 
+ 20/08/2023 13:15:12:1512  info : 1 
+ 20/08/2023 13:15:12:1512  http : POST /api/TotalReceita 200 20 - 4.745 ms 
+ 
+ 20/08/2023 13:15:12:1512  info : 17 
+ 20/08/2023 13:15:12:1512  http : POST /api/manyDespesa 200 1407 - 4.699 ms 
+ 
+ 20/08/2023 13:15:12:1512  info : 1 
+ 20/08/2023 13:15:12:1512  http : POST /api/TotalReceita 200 20 - 110.634 ms 
+ 
+ 20/08/2023 13:15:12:1512  info : 17 
+ 20/08/2023 13:15:12:1512  http : POST /api/manyDespesa 200 1407 - 117.452 ms 
+ 
+ 20/08/2023 13:15:12:1512  info : 10 
+ 20/08/2023 13:15:12:1512  http : POST /api/manyDespesaAno 200 923 - 118.941 ms 
+ 
+ 20/08/2023 13:15:12:1512  info : 1 
+ 20/08/2023 13:15:12:1512  http : POST /api/VendaAnimais 200 15 - 93.459 ms 
+ 
+ 20/08/2023 13:15:12:1512  info : 10 
+ 20/08/2023 13:15:12:1512  http : POST /api/manyDespesaAno 200 923 - 91.806 ms 
+ 
+ 20/08/2023 13:37:11:3711  info : 10 
+ 20/08/2023 13:37:11:3711  http : POST /api/manyDespesaAno 200 921 - 73.261 ms 
+ 
+ 20/08/2023 13:37:13:3713  info : 10 
+ 20/08/2023 13:37:13:3713  http : POST /api/manyDespesaAno 200 942 - 2.731 ms 
+ 
+ 20/08/2023 13:37:19:3719  info : 10 
+ 20/08/2023 13:37:19:3719  http : POST /api/manyDespesaAno 200 921 - 2.207 ms 
+ 
+ 20/08/2023 13:37:21:3721  info : 10 
+ 20/08/2023 13:37:21:3721  http : POST /api/manyDespesaAno 200 923 - 2.356 ms 
+ 
+ 20/08/2023 13:37:23:3723  info : 10 
+ 20/08/2023 13:37:23:3723  http : POST /api/manyDespesaAno 200 921 - 3.352 ms 
+ 
+ 20/08/2023 13:37:25:3725  info : 10 
+ 20/08/2023 13:37:25:3725  http : POST /api/manyDespesaAno 200 923 - 2.278 ms 
+ 
+ 20/08/2023 13:37:26:3726  info : 10 
+ 20/08/2023 13:37:26:3726  http : POST /api/manyDespesaAno 200 921 - 2.796 ms 
+ 
+ 20/08/2023 13:37:27:3727  info : 10 
+ 20/08/2023 13:37:27:3727  http : POST /api/manyDespesaAno 200 942 - 3.136 ms 
+ 
+ 20/08/2023 13:41:54:4154  info : 1 
+ 20/08/2023 13:41:54:4154  http : POST /api/TotalReceita 200 20 - 111.418 ms 
+ 
+ 20/08/2023 13:41:54:4154  info : 1 
+ 20/08/2023 13:41:54:4154  http : POST /api/VendaAnimais 200 15 - 108.910 ms 
+ 
+ 20/08/2023 13:41:54:4154  info : 17 
+ 20/08/2023 13:41:54:4154  http : POST /api/manyDespesa 200 1407 - 120.480 ms 
+ 
+ 20/08/2023 13:41:54:4154  info : 1 
+ 20/08/2023 13:41:54:4154  http : POST /api/TotalReceita 200 20 - 5.787 ms 
+ 
+ 20/08/2023 13:41:54:4154  info : 1 
+ 20/08/2023 13:41:54:4154  http : POST /api/VendaAnimais 200 15 - 8.282 ms 
+ 
+ 20/08/2023 13:41:54:4154  info : 10 
+ 20/08/2023 13:41:54:4154  http : POST /api/manyDespesaAno 200 923 - 131.004 ms 
+ 
+ 20/08/2023 13:41:54:4154  info : 1 
+ 20/08/2023 13:41:54:4154  http : POST /api/TotalDespesa 200 19 - 105.840 ms 
+ 
+ 20/08/2023 13:41:54:4154  info : 17 
+ 20/08/2023 13:41:54:4154  http : POST /api/manyDespesa 200 1407 - 9.582 ms 
+ 
+ 20/08/2023 13:41:54:4154  info : 10 
+ 20/08/2023 13:41:54:4154  http : POST /api/manyDespesaAno 200 923 - 5.385 ms 
+ 
+ 20/08/2023 13:41:54:4154  info : 1 
+ 20/08/2023 13:41:54:4154  http : POST /api/TotalDespesa 200 19 - 175.734 ms 
+ 
+ 20/08/2023 13:41:57:4157  info : 10 
+ 20/08/2023 13:41:57:4157  http : POST /api/manyDespesaAno 200 942 - 4.663 ms 
+ 
+ 20/08/2023 13:41:58:4158  info : 10 
+ 20/08/2023 13:41:58:4158  http : POST /api/manyDespesaAno 200 923 - 2.337 ms 
+ 
+ 20/08/2023 13:41:58:4158  info : 10 
+ 20/08/2023 13:41:58:4158  http : POST /api/manyDespesaAno 200 921 - 2.691 ms 
+ 
+ 20/08/2023 13:46:16:4616  info : 1 
+ 20/08/2023 13:46:16:4616  http : POST /api/TotalDespesa 200 19 - 82.853 ms 
+ 
+ 20/08/2023 13:46:16:4616  info : 1 
+ 20/08/2023 13:46:16:4616  http : POST /api/VendaAnimais 200 15 - 7.271 ms 
+ 
+ 20/08/2023 13:46:16:4616  info : 1 
+ 20/08/2023 13:46:16:4616  http : POST /api/TotalDespesa 200 19 - 101.312 ms 
+ 
+ 20/08/2023 13:46:16:4616  info : 1 
+ 20/08/2023 13:46:16:4616  http : POST /api/VendaAnimais 200 15 - 102.462 ms 
+ 
+ 20/08/2023 13:46:16:4616  info : 10 
+ 20/08/2023 13:46:16:4616  http : POST /api/manyDespesaAno 200 923 - 4.557 ms 
+ 
+ 20/08/2023 13:46:16:4616  info : 10 
+ 20/08/2023 13:46:16:4616  http : POST /api/manyDespesaAno 200 923 - 2.701 ms 
+ 
+ 20/08/2023 13:46:16:4616  info : 17 
+ 20/08/2023 13:46:16:4616  http : POST /api/manyDespesa 200 1407 - 7.151 ms 
+ 
+ 20/08/2023 13:46:16:4616  info : 17 
+ 20/08/2023 13:46:16:4616  http : POST /api/manyDespesa 200 1407 - 111.005 ms 
+ 
+ 20/08/2023 13:46:16:4616  info : 1 
+ 20/08/2023 13:46:16:4616  http : POST /api/TotalReceita 200 20 - 111.134 ms 
+ 
+ 20/08/2023 13:46:16:4616  info : 1 
+ 20/08/2023 13:46:16:4616  http : POST /api/TotalReceita 200 20 - 182.863 ms 
+ 
+ 20/08/2023 13:46:19:4619  info : 10 
+ 20/08/2023 13:46:19:4619  http : POST /api/manyDespesaAno 200 1074 - 5.986 ms 
+ 
+ 20/08/2023 13:50:38:5038  info : 1 
+ 20/08/2023 13:50:38:5038  http : POST /api/TotalDespesa 200 19 - 100.457 ms 
+ 
+ 20/08/2023 13:50:38:5038  info : 1 
+ 20/08/2023 13:50:38:5038  http : POST /api/TotalReceita 200 20 - 99.090 ms 
+ 
+ 20/08/2023 13:50:38:5038  info : 1 
+ 20/08/2023 13:50:38:5038  http : POST /api/VendaAnimais 200 15 - 109.632 ms 
+ 
+ 20/08/2023 13:50:38:5038  info : 1 
+ 20/08/2023 13:50:38:5038  http : POST /api/TotalReceita 200 20 - 4.054 ms 
+ 
+ 20/08/2023 13:50:38:5038  info : 1 
+ 20/08/2023 13:50:38:5038  http : POST /api/VendaAnimais 200 15 - 5.268 ms 
+ 
+ 20/08/2023 13:50:38:5038  info : 17 
+ 20/08/2023 13:50:38:5038  http : POST /api/manyDespesa 200 1407 - 116.946 ms 
+ 
+ 20/08/2023 13:50:38:5038  info : 17 
+ 20/08/2023 13:50:38:5038  http : POST /api/manyDespesa 200 1407 - 5.213 ms 
+ 
+ 20/08/2023 13:50:38:5038  info : 10 
+ 20/08/2023 13:50:38:5038  http : POST /api/manyDespesaAno 200 923 - 118.766 ms 
+ 
+ 20/08/2023 13:50:38:5038  info : 1 
+ 20/08/2023 13:50:38:5038  http : POST /api/TotalDespesa 200 19 - 117.733 ms 
+ 
+ 20/08/2023 13:50:38:5038  info : 10 
+ 20/08/2023 13:50:38:5038  http : POST /api/manyDespesaAno 200 923 - 8.082 ms 
+ 
+ 20/08/2023 13:51:41:5141  info : 1 
+ 20/08/2023 13:51:41:5141  http : POST /api/TotalDespesa 200 19 - 82.880 ms 
+ 
+ 20/08/2023 13:51:41:5141  info : 1 
+ 20/08/2023 13:51:41:5141  http : POST /api/VendaAnimais 200 15 - 89.419 ms 
+ 
+ 20/08/2023 13:51:41:5141  info : 17 
+ 20/08/2023 13:51:41:5141  http : POST /api/manyDespesa 200 1407 - 89.540 ms 
+ 
+ 20/08/2023 13:51:41:5141  info : 10 
+ 20/08/2023 13:51:41:5141  http : POST /api/manyDespesaAno 200 923 - 90.132 ms 
+ 
+ 20/08/2023 13:51:41:5141  info : 1 
+ 20/08/2023 13:51:41:5141  http : POST /api/TotalReceita 200 20 - 156.490 ms 
+ 
+ 20/08/2023 13:52:36:5236  info : 1 
+ 20/08/2023 13:52:36:5236  http : POST /api/TotalDespesa 200 19 - 110.251 ms 
+ 
+ 20/08/2023 13:52:36:5236  info : 1 
+ 20/08/2023 13:52:36:5236  http : POST /api/TotalDespesa 200 19 - 109.831 ms 
+ 
+ 20/08/2023 13:52:36:5236  info : 1 
+ 20/08/2023 13:52:36:5236  http : POST /api/TotalReceita 200 20 - 110.426 ms 
+ 
+ 20/08/2023 13:52:36:5236  info : 1 
+ 20/08/2023 13:52:36:5236  http : POST /api/TotalReceita 200 20 - 116.738 ms 
+ 
+ 20/08/2023 13:52:36:5236  info : 1 
+ 20/08/2023 13:52:36:5236  http : POST /api/VendaAnimais 200 15 - 116.494 ms 
+ 
+ 20/08/2023 13:52:36:5236  info : 17 
+ 20/08/2023 13:52:36:5236  http : POST /api/manyDespesa 200 1407 - 8.902 ms 
+ 
+ 20/08/2023 13:52:36:5236  info : 1 
+ 20/08/2023 13:52:36:5236  http : POST /api/VendaAnimais 200 15 - 118.698 ms 
+ 
+ 20/08/2023 13:52:36:5236  info : 10 
+ 20/08/2023 13:52:36:5236  http : POST /api/manyDespesaAno 200 923 - 8.153 ms 
+ 
+ 20/08/2023 13:52:36:5236  info : 17 
+ 20/08/2023 13:52:36:5236  http : POST /api/manyDespesa 200 1407 - 5.045 ms 
+ 
+ 20/08/2023 13:52:36:5236  info : 10 
+ 20/08/2023 13:52:36:5236  http : POST /api/manyDespesaAno 200 923 - 3.003 ms 
+ 
+ 20/08/2023 13:52:56:5256  info : 1 
+ 20/08/2023 13:52:56:5256  http : POST /api/TotalDespesa 200 19 - 4.090 ms 
+ 
+ 20/08/2023 13:52:56:5256  info : 1 
+ 20/08/2023 13:52:56:5256  http : POST /api/VendaAnimais 200 15 - 5.562 ms 
+ 
+ 20/08/2023 13:52:56:5256  info : 1 
+ 20/08/2023 13:52:56:5256  http : POST /api/TotalReceita 200 20 - 9.397 ms 
+ 
+ 20/08/2023 13:52:56:5256  info : 1 
+ 20/08/2023 13:52:56:5256  http : POST /api/VendaAnimais 200 15 - 8.177 ms 
+ 
+ 20/08/2023 13:52:56:5256  info : 17 
+ 20/08/2023 13:52:56:5256  http : POST /api/manyDespesa 200 1407 - 10.991 ms 
+ 
+ 20/08/2023 13:52:56:5256  info : 1 
+ 20/08/2023 13:52:56:5256  http : POST /api/TotalDespesa 200 19 - 3.346 ms 
+ 
+ 20/08/2023 13:52:56:5256  info : 10 
+ 20/08/2023 13:52:56:5256  http : POST /api/manyDespesaAno 200 923 - 9.694 ms 
+ 
+ 20/08/2023 13:52:56:5256  info : 17 
+ 20/08/2023 13:52:56:5256  http : POST /api/manyDespesa 200 1407 - 5.535 ms 
+ 
+ 20/08/2023 13:52:56:5256  info : 1 
+ 20/08/2023 13:52:56:5256  http : POST /api/TotalReceita 200 20 - 5.495 ms 
+ 
+ 20/08/2023 13:52:56:5256  info : 10 
+ 20/08/2023 13:52:56:5256  http : POST /api/manyDespesaAno 200 923 - 4.978 ms 
+ 
+ 20/08/2023 13:53:03:533  info : 1 
+ 20/08/2023 13:53:03:533  http : POST /api/TotalDespesa 200 19 - 2.720 ms 
+ 
+ 20/08/2023 13:53:03:533  info : 1 
+ 20/08/2023 13:53:03:533  http : POST /api/TotalReceita 200 20 - 6.011 ms 
+ 
+ 20/08/2023 13:53:03:533  info : 1 
+ 20/08/2023 13:53:03:533  http : POST /api/VendaAnimais 200 15 - 6.209 ms 
+ 
+ 20/08/2023 13:53:03:533  info : 17 
+ 20/08/2023 13:53:03:533  http : POST /api/manyDespesa 200 1407 - 5.157 ms 
+ 
+ 20/08/2023 13:53:03:533  info : 10 
+ 20/08/2023 13:53:03:533  http : POST /api/manyDespesaAno 200 923 - 5.302 ms 
+ 
+ 20/08/2023 13:53:18:5318  info : 1 
+ 20/08/2023 13:53:18:5318  http : POST /api/TotalDespesa 200 19 - 3.572 ms 
+ 
+ 20/08/2023 13:53:18:5318  info : 1 
+ 20/08/2023 13:53:18:5318  http : POST /api/TotalReceita 200 20 - 7.281 ms 
+ 
+ 20/08/2023 13:53:18:5318  info : 1 
+ 20/08/2023 13:53:18:5318  http : POST /api/VendaAnimais 200 15 - 7.910 ms 
+ 
+ 20/08/2023 13:53:18:5318  info : 17 
+ 20/08/2023 13:53:18:5318  http : POST /api/manyDespesa 200 1407 - 10.854 ms 
+ 
+ 20/08/2023 13:53:18:5318  info : 1 
+ 20/08/2023 13:53:18:5318  http : POST /api/TotalDespesa 200 19 - 11.361 ms 
+ 
+ 20/08/2023 13:53:18:5318  info : 1 
+ 20/08/2023 13:53:18:5318  http : POST /api/TotalReceita 200 20 - 8.996 ms 
+ 
+ 20/08/2023 13:53:18:5318  info : 1 
+ 20/08/2023 13:53:18:5318  http : POST /api/VendaAnimais 200 15 - 5.552 ms 
+ 
+ 20/08/2023 13:53:18:5318  info : 17 
+ 20/08/2023 13:53:18:5318  http : POST /api/manyDespesa 200 1407 - 5.377 ms 
+ 
+ 20/08/2023 13:53:18:5318  info : 10 
+ 20/08/2023 13:53:18:5318  http : POST /api/manyDespesaAno 200 923 - 4.380 ms 
+ 
+ 20/08/2023 13:53:18:5318  info : 10 
+ 20/08/2023 13:53:18:5318  http : POST /api/manyDespesaAno 200 923 - 72.417 ms 
+ 
+ 20/08/2023 13:53:32:5332  info : 1 
+ 20/08/2023 13:53:32:5332  http : POST /api/TotalReceita 200 20 - 7.596 ms 
+ 
+ 20/08/2023 13:53:32:5332  info : 1 
+ 20/08/2023 13:53:32:5332  http : POST /api/TotalDespesa 200 19 - 7.119 ms 
+ 
+ 20/08/2023 13:53:32:5332  info : 1 
+ 20/08/2023 13:53:32:5332  http : POST /api/VendaAnimais 200 15 - 8.259 ms 
+ 
+ 20/08/2023 13:53:32:5332  info : 17 
+ 20/08/2023 13:53:32:5332  http : POST /api/manyDespesa 200 1407 - 8.309 ms 
+ 
+ 20/08/2023 13:53:32:5332  info : 10 
+ 20/08/2023 13:53:32:5332  http : POST /api/manyDespesaAno 200 923 - 6.332 ms 
+ 
+ 20/08/2023 13:53:32:5332  info : 1 
+ 20/08/2023 13:53:32:5332  http : POST /api/TotalDespesa 200 19 - 5.233 ms 
+ 
+ 20/08/2023 13:53:32:5332  info : 1 
+ 20/08/2023 13:53:32:5332  http : POST /api/TotalReceita 200 20 - 7.588 ms 
+ 
+ 20/08/2023 13:53:32:5332  info : 1 
+ 20/08/2023 13:53:32:5332  http : POST /api/VendaAnimais 200 15 - 7.236 ms 
+ 
+ 20/08/2023 13:53:32:5332  info : 17 
+ 20/08/2023 13:53:32:5332  http : POST /api/manyDespesa 200 1407 - 5.393 ms 
+ 
+ 20/08/2023 13:53:32:5332  info : 10 
+ 20/08/2023 13:53:32:5332  http : POST /api/manyDespesaAno 200 923 - 4.262 ms 
+ 
+ 20/08/2023 13:53:49:5349  info : 10 
+ 20/08/2023 13:53:49:5349  http : POST /api/manyDespesaAno 200 942 - 2.467 ms 
+ 
+ 20/08/2023 13:58:13:5813  info : 1 
+ 20/08/2023 13:58:13:5813  http : POST /api/TotalDespesa 200 19 - 84.145 ms 
+ 
+ 20/08/2023 13:58:13:5813  info : 1 
+ 20/08/2023 13:58:13:5813  http : POST /api/TotalReceita 200 20 - 88.465 ms 
+ 
+ 20/08/2023 13:58:13:5813  info : 1 
+ 20/08/2023 13:58:13:5813  http : POST /api/VendaAnimais 200 15 - 88.820 ms 
+ 
+ 20/08/2023 13:58:13:5813  info : 17 
+ 20/08/2023 13:58:13:5813  http : POST /api/manyDespesa 200 1407 - 90.448 ms 
+ 
+ 20/08/2023 13:58:13:5813  info : 10 
+ 20/08/2023 13:58:13:5813  http : POST /api/manyDespesaAno 200 942 - 91.232 ms 
+ 
+ 20/08/2023 13:58:19:5819  info : 1 
+ 20/08/2023 13:58:19:5819  http : POST /api/TotalDespesa 200 19 - 3.818 ms 
+ 
+ 20/08/2023 13:58:19:5819  info : 1 
+ 20/08/2023 13:58:19:5819  http : POST /api/TotalReceita 200 20 - 4.524 ms 
+ 
+ 20/08/2023 13:58:19:5819  info : 1 
+ 20/08/2023 13:58:19:5819  http : POST /api/VendaAnimais 200 15 - 7.650 ms 
+ 
+ 20/08/2023 13:58:19:5819  info : 17 
+ 20/08/2023 13:58:19:5819  http : POST /api/manyDespesa 200 1407 - 10.080 ms 
+ 
+ 20/08/2023 13:58:19:5819  info : 10 
+ 20/08/2023 13:58:19:5819  http : POST /api/manyDespesaAno 200 923 - 10.154 ms 
+ 
+ 20/08/2023 13:58:19:5819  info : 1 
+ 20/08/2023 13:58:19:5819  http : POST /api/TotalReceita 200 20 - 8.693 ms 
+ 
+ 20/08/2023 13:58:19:5819  info : 1 
+ 20/08/2023 13:58:19:5819  http : POST /api/TotalDespesa 200 19 - 12.605 ms 
+ 
+ 20/08/2023 13:58:19:5819  info : 1 
+ 20/08/2023 13:58:19:5819  http : POST /api/VendaAnimais 200 15 - 8.463 ms 
+ 
+ 20/08/2023 13:58:19:5819  info : 17 
+ 20/08/2023 13:58:19:5819  http : POST /api/manyDespesa 200 1407 - 6.474 ms 
+ 
+ 20/08/2023 13:58:19:5819  info : 10 
+ 20/08/2023 13:58:19:5819  http : POST /api/manyDespesaAno 200 923 - 4.808 ms 
+ 
+ 20/08/2023 13:58:34:5834  info : 1 
+ 20/08/2023 13:58:34:5834  http : POST /api/TotalDespesa 200 19 - 3.094 ms 
+ 
+ 20/08/2023 13:58:34:5834  info : 1 
+ 20/08/2023 13:58:34:5834  http : POST /api/TotalReceita 200 20 - 3.684 ms 
+ 
+ 20/08/2023 13:58:34:5834  info : 1 
+ 20/08/2023 13:58:34:5834  http : POST /api/VendaAnimais 200 15 - 4.414 ms 
+ 
+ 20/08/2023 13:58:34:5834  info : 17 
+ 20/08/2023 13:58:34:5834  http : POST /api/manyDespesa 200 1407 - 5.302 ms 
+ 
+ 20/08/2023 13:58:34:5834  info : 10 
+ 20/08/2023 13:58:34:5834  http : POST /api/manyDespesaAno 200 923 - 6.406 ms 
+ 
+ 20/08/2023 13:58:47:5847  info : 1 
+ 20/08/2023 13:58:47:5847  http : POST /api/TotalDespesa 200 19 - 3.262 ms 
+ 
+ 20/08/2023 13:58:47:5847  info : 1 
+ 20/08/2023 13:58:47:5847  http : POST /api/TotalReceita 200 20 - 3.755 ms 
+ 
+ 20/08/2023 13:58:47:5847  info : 1 
+ 20/08/2023 13:58:47:5847  http : POST /api/VendaAnimais 200 15 - 4.297 ms 
+ 
+ 20/08/2023 13:58:47:5847  info : 17 
+ 20/08/2023 13:58:47:5847  http : POST /api/manyDespesa 200 1407 - 5.155 ms 
+ 
+ 20/08/2023 13:58:47:5847  info : 10 
+ 20/08/2023 13:58:47:5847  http : POST /api/manyDespesaAno 200 923 - 6.332 ms 
+ 
+ 20/08/2023 14:00:07:07  info : 1 
+ 20/08/2023 14:00:07:07  http : POST /api/TotalReceita 200 20 - 80.830 ms 
+ 
+ 20/08/2023 14:00:07:07  info : 1 
+ 20/08/2023 14:00:07:07  http : POST /api/VendaAnimais 200 15 - 80.596 ms 
+ 
+ 20/08/2023 14:00:07:07  info : 10 
+ 20/08/2023 14:00:07:07  http : POST /api/manyDespesaAno 200 923 - 81.852 ms 
+ 
+ 20/08/2023 14:00:08:08  info : 17 
+ 20/08/2023 14:00:08:08  http : POST /api/manyDespesa 200 1407 - 180.117 ms 
+ 
+ 20/08/2023 14:00:08:08  info : 1 
+ 20/08/2023 14:00:08:08  http : POST /api/TotalDespesa 200 19 - 184.771 ms 
+ 
+ 20/08/2023 15:14:58:1458  info : 1 
+ 20/08/2023 15:14:58:1458  http : POST /api/TotalReceita 200 20 - 139.850 ms 
+ 
+ 20/08/2023 15:14:58:1458  info : 1 
+ 20/08/2023 15:14:58:1458  http : POST /api/TotalDespesa 200 19 - 162.848 ms 
+ 
+ 20/08/2023 15:14:58:1458  info : 1 
+ 20/08/2023 15:14:58:1458  http : POST /api/VendaAnimais 200 15 - 147.545 ms 
+ 
+ 20/08/2023 15:14:58:1458  info : 10 
+ 20/08/2023 15:14:58:1458  http : POST /api/manyDespesaAno 200 923 - 144.221 ms 
+ 
+ 20/08/2023 15:14:58:1458  info : 1 
+ 20/08/2023 15:14:58:1458  http : POST /api/TotalDespesa 200 19 - 142.674 ms 
+ 
+ 20/08/2023 15:14:58:1458  info : 17 
+ 20/08/2023 15:14:58:1458  http : POST /api/manyDespesa 200 1407 - 157.667 ms 
+ 
+ 20/08/2023 15:15:33:1533  info : 1 
+ 20/08/2023 15:15:33:1533  http : POST /api/TotalDespesa 200 19 - 96.199 ms 
+ 
+ 20/08/2023 15:15:33:1533  info : 1 
+ 20/08/2023 15:15:33:1533  http : POST /api/TotalReceita 200 20 - 9.206 ms 
+ 
+ 20/08/2023 15:15:33:1533  info : 1 
+ 20/08/2023 15:15:33:1533  http : POST /api/TotalReceita 200 20 - 111.446 ms 
+ 
+ 20/08/2023 15:15:33:1533  info : 1 
+ 20/08/2023 15:15:33:1533  http : POST /api/VendaAnimais 200 15 - 112.714 ms 
+ 
+ 20/08/2023 15:15:33:1533  info : 17 
+ 20/08/2023 15:15:33:1533  http : POST /api/manyDespesa 200 1407 - 117.299 ms 
+ 
+ 20/08/2023 15:15:33:1533  info : 1 
+ 20/08/2023 15:15:33:1533  http : POST /api/VendaAnimais 200 15 - 7.113 ms 
+ 
+ 20/08/2023 15:15:33:1533  info : 10 
+ 20/08/2023 15:15:33:1533  http : POST /api/manyDespesaAno 200 923 - 6.060 ms 
+ 
+ 20/08/2023 15:15:33:1533  info : 17 
+ 20/08/2023 15:15:33:1533  http : POST /api/manyDespesa 200 1407 - 10.347 ms 
+ 
+ 20/08/2023 15:15:33:1533  info : 1 
+ 20/08/2023 15:15:33:1533  http : POST /api/TotalDespesa 200 19 - 119.521 ms 
+ 
+ 20/08/2023 15:15:33:1533  info : 10 
+ 20/08/2023 15:15:33:1533  http : POST /api/manyDespesaAno 200 923 - 124.808 ms 
+ 
+ 20/08/2023 15:15:39:1539  info : 1 
+ 20/08/2023 15:15:39:1539  http : POST /api/TotalDespesa 200 19 - 2.543 ms 
+ 
+ 20/08/2023 15:15:39:1539  info : 1 
+ 20/08/2023 15:15:39:1539  http : POST /api/VendaAnimais 200 14 - 2.451 ms 
+ 
+ 20/08/2023 15:15:39:1539  info : 17 
+ 20/08/2023 15:15:39:1539  http : POST /api/manyDespesa 200 1390 - 3.092 ms 
+ 
+ 20/08/2023 15:15:39:1539  info : 1 
+ 20/08/2023 15:15:39:1539  http : POST /api/TotalReceita 200 19 - 5.317 ms 
+ 
+ 20/08/2023 15:15:43:1543  info : 1 
+ 20/08/2023 15:15:43:1543  http : POST /api/TotalDespesa 200 19 - 3.944 ms 
+ 
+ 20/08/2023 15:15:43:1543  info : 1 
+ 20/08/2023 15:15:43:1543  http : POST /api/TotalReceita 200 20 - 4.309 ms 
+ 
+ 20/08/2023 15:15:43:1543  info : 1 
+ 20/08/2023 15:15:43:1543  http : POST /api/VendaAnimais 200 15 - 5.223 ms 
+ 
+ 20/08/2023 15:15:43:1543  info : 17 
+ 20/08/2023 15:15:43:1543  http : POST /api/manyDespesa 200 1407 - 6.547 ms 
+ 
+ 20/08/2023 15:15:50:1550  info : 1 
+ 20/08/2023 15:15:50:1550  http : POST /api/TotalDespesa 200 19 - 2.240 ms 
+ 
+ 20/08/2023 15:15:50:1550  info : 17 
+ 20/08/2023 15:15:50:1550  http : POST /api/manyDespesa 200 1385 - 3.458 ms 
+ 
+ 20/08/2023 15:15:50:1550  info : 1 
+ 20/08/2023 15:15:50:1550  http : POST /api/TotalReceita 200 19 - 3.936 ms 
+ 
+ 20/08/2023 15:15:50:1550  info : 1 
+ 20/08/2023 15:15:50:1550  http : POST /api/VendaAnimais 200 11 - 3.278 ms 
+ 
+ 20/08/2023 15:15:56:1556  info : 1 
+ 20/08/2023 15:15:56:1556  http : POST /api/TotalDespesa 200 19 - 3.894 ms 
+ 
+ 20/08/2023 15:15:56:1556  info : 1 
+ 20/08/2023 15:15:56:1556  http : POST /api/TotalReceita 200 20 - 3.933 ms 
+ 
+ 20/08/2023 15:15:56:1556  info : 1 
+ 20/08/2023 15:15:56:1556  http : POST /api/VendaAnimais 200 15 - 4.609 ms 
+ 
+ 20/08/2023 15:15:56:1556  info : 17 
+ 20/08/2023 15:15:56:1556  http : POST /api/manyDespesa 200 1407 - 5.160 ms 
+ 
+ 24/08/2023 14:10:56:1056  info : run in http://localhost:5000/ 
+ 24/08/2023 14:10:57:1057  info : connected 
